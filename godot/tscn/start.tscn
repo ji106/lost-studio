@@ -1,0 +1,50 @@
+[gd_scene load_steps=9 format=3 uid="uid://bkwwdnedqgtf0"]
+
+[ext_resource type="Texture2D" uid="uid://suwu81qigpe3" path="res://assets/train-station-map/wall.png" id="1_pob1m"]
+[ext_resource type="Texture2D" uid="uid://7w13qr7tdcjr" path="res://assets/train-station-map/train_station_border.png" id="2_gophc"]
+[ext_resource type="Texture2D" uid="uid://daeg1atru1ejo" path="res://assets/train-station-map/train_04.png" id="3_p0nl4"]
+[ext_resource type="Texture2D" uid="uid://8k77yjfdfabb" path="res://assets/train-station-map/station_props.png" id="4_da165"]
+[ext_resource type="Texture2D" uid="uid://dijnd6nqt0sa3" path="res://assets/train-station-map/floor.png" id="5_r8ukj"]
+[ext_resource type="Texture2D" uid="uid://c528w4xr1ykxe" path="res://assets/train-station-map/escalator_wall_01.png" id="6_1colc"]
+[ext_resource type="Texture2D" uid="uid://g6lem43dp5tx" path="res://assets/train-station-map/escalator_01.png" id="7_hwiky"]
+[ext_resource type="Texture2D" uid="uid://c2867bojbotw0" path="res://assets/train-station-map/train_station_background.png" id="8_mhwaj"]
+
+[node name="Start" type="Node2D"]
+
+[node name="Wall" type="Sprite2D" parent="."]
+z_index = 2
+position = Vector2(-13, -195)
+texture = ExtResource("1_pob1m")
+
+[node name="TrainStationBorder" type="Sprite2D" parent="."]
+z_index = 3
+position = Vector2(-13, -195)
+texture = ExtResource("2_gophc")
+
+[node name="Train04" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(-13, -195)
+texture = ExtResource("3_p0nl4")
+
+[node name="StationProps" type="Sprite2D" parent="."]
+z_index = 3
+position = Vector2(-13, -195)
+texture = ExtResource("4_da165")
+
+[node name="Floor" type="Sprite2D" parent="."]
+position = Vector2(-13, -193)
+texture = ExtResource("5_r8ukj")
+
+[node name="EscalatorWall01" type="Sprite2D" parent="."]
+z_index = 2
+position = Vector2(-13, -195)
+texture = ExtResource("6_1colc")
+
+[node name="Escalator01" type="Sprite2D" parent="."]
+z_index = 2
+position = Vector2(-13, -195)
+texture = ExtResource("7_hwiky")
+
+[node name="TrainStationBackground" type="Sprite2D" parent="."]
+position = Vector2(-13, -195)
+texture = ExtResource("8_mhwaj")

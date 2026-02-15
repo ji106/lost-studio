@@ -1,0 +1,40 @@
+[gd_scene load_steps=9 format=3 uid="uid://dvb65soh1j300"]
+
+[ext_resource type="Texture2D" uid="uid://c5eg00exb1foh" path="res://assets/train-station-exit/view/train-station-exit.png" id="1_kk3o8"]
+[ext_resource type="Texture2D" uid="uid://dksq2ow0281yj" path="res://assets/train-station-exit/background.png" id="2_3a1lu"]
+[ext_resource type="Texture2D" uid="uid://h2xexr1r5uwa" path="res://assets/train-station-exit/border.png" id="3_jp1c7"]
+[ext_resource type="Texture2D" uid="uid://4y7f482xjoni" path="res://assets/train-station-exit/elevator_down_01.png" id="4_t1e13"]
+[ext_resource type="Texture2D" uid="uid://di4xxgvum3hxn" path="res://assets/train-station-exit/elevator_up_01.png" id="5_or5sd"]
+[ext_resource type="Texture2D" uid="uid://dd1viirmovsxu" path="res://assets/train-station-exit/floor.png" id="6_pegxy"]
+[ext_resource type="Texture2D" uid="uid://3iwsbc537tgh" path="res://assets/train-station-exit/props.png" id="7_e6cp8"]
+[ext_resource type="Texture2D" uid="uid://chjxtdgoajp6i" path="res://assets/train-station-exit/wall.png" id="8_6epy1"]
+
+[node name="exit" type="Node2D"]
+
+[node name="TrainStationExit" type="Sprite2D" parent="."]
+position = Vector2(963, -2)
+texture = ExtResource("1_kk3o8")
+
+[node name="Background" type="Sprite2D" parent="."]
+texture = ExtResource("2_3a1lu")
+
+[node name="Border" type="Sprite2D" parent="."]
+z_index = 4
+texture = ExtResource("3_jp1c7")
+
+[node name="ElevatorDown01" type="Sprite2D" parent="."]
+z_index = 2
+texture = ExtResource("4_t1e13")
+
+[node name="ElevatorUp01" type="Sprite2D" parent="."]
+z_index = 2
+texture = ExtResource("5_or5sd")
+
+[node name="Floor" type="Sprite2D" parent="."]
+texture = ExtResource("6_pegxy")
+
+[node name="Props" type="Sprite2D" parent="."]
+texture = ExtResource("7_e6cp8")
+
+[node name="Wall" type="Sprite2D" parent="."]
+texture = ExtResource("8_6epy1")

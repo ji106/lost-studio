@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://dma77qehs8153"]
+
+[ext_resource type="Texture2D" uid="uid://cdhxvxrjxoxu1" path="res://assets/lifes/health-bar.png" id="1_3tb1s"]
+
+[resource]
+atlas = ExtResource("1_3tb1s")
+region = Rect2(32, 0, 32, 32)
