@@ -1,50 +1,132 @@
-[gd_scene load_steps=9 format=3 uid="uid://bkwwdnedqgtf0"]
+[gd_scene load_steps=20 format=3 uid="uid://bkwwdnedqgtf0"]
 
+[ext_resource type="PackedScene" uid="uid://l8rglr0pslgo" path="res://tscn/player.tscn" id="1_mb0be"]
 [ext_resource type="Texture2D" uid="uid://suwu81qigpe3" path="res://assets/train-station-map/wall.png" id="1_pob1m"]
 [ext_resource type="Texture2D" uid="uid://7w13qr7tdcjr" path="res://assets/train-station-map/train_station_border.png" id="2_gophc"]
 [ext_resource type="Texture2D" uid="uid://daeg1atru1ejo" path="res://assets/train-station-map/train_04.png" id="3_p0nl4"]
 [ext_resource type="Texture2D" uid="uid://8k77yjfdfabb" path="res://assets/train-station-map/station_props.png" id="4_da165"]
 [ext_resource type="Texture2D" uid="uid://dijnd6nqt0sa3" path="res://assets/train-station-map/floor.png" id="5_r8ukj"]
-[ext_resource type="Texture2D" uid="uid://c528w4xr1ykxe" path="res://assets/train-station-map/escalator_wall_01.png" id="6_1colc"]
-[ext_resource type="Texture2D" uid="uid://g6lem43dp5tx" path="res://assets/train-station-map/escalator_01.png" id="7_hwiky"]
 [ext_resource type="Texture2D" uid="uid://c2867bojbotw0" path="res://assets/train-station-map/train_station_background.png" id="8_mhwaj"]
+[ext_resource type="Texture2D" uid="uid://bi1ajyd40hlwj" path="res://assets/train-station-map/escalator_wall_animation.png" id="9_26jlv"]
+[ext_resource type="Texture2D" uid="uid://d144tynalogea" path="res://assets/train-station-map/escalator_animation.png" id="10_tc2v2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_26jlv"]
+atlas = ExtResource("9_26jlv")
+region = Rect2(0, 0, 696, 435)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tc2v2"]
+atlas = ExtResource("9_26jlv")
+region = Rect2(696, 0, 696, 435)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j28yw"]
+atlas = ExtResource("9_26jlv")
+region = Rect2(1392, 0, 696, 435)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ctqc"]
+atlas = ExtResource("9_26jlv")
+region = Rect2(2088, 0, 696, 435)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_efg5n"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_26jlv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tc2v2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j28yw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1ctqc")
+}],
+"loop": true,
+"name": &"wall",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gxtfp"]
+atlas = ExtResource("10_tc2v2")
+region = Rect2(0, 0, 696, 435)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uvlsq"]
+atlas = ExtResource("10_tc2v2")
+region = Rect2(696, 0, 696, 435)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6jgdv"]
+atlas = ExtResource("10_tc2v2")
+region = Rect2(1392, 0, 696, 435)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ouvcg"]
+atlas = ExtResource("10_tc2v2")
+region = Rect2(2088, 0, 696, 435)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sxdgg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gxtfp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uvlsq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6jgdv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ouvcg")
+}],
+"loop": true,
+"name": &"escalator",
+"speed": 5.0
+}]
 
 [node name="Start" type="Node2D"]
 
-[node name="Wall" type="Sprite2D" parent="."]
+[node name="Player" parent="." instance=ExtResource("1_mb0be")]
+z_index = 4
+
+[node name="map" type="Node" parent="."]
+
+[node name="Wall" type="Sprite2D" parent="map"]
 z_index = 2
-position = Vector2(-13, -195)
 texture = ExtResource("1_pob1m")
 
-[node name="TrainStationBorder" type="Sprite2D" parent="."]
+[node name="TrainStationBorder" type="Sprite2D" parent="map"]
 z_index = 3
-position = Vector2(-13, -195)
 texture = ExtResource("2_gophc")
 
-[node name="Train04" type="Sprite2D" parent="."]
+[node name="Train04" type="Sprite2D" parent="map"]
 z_index = 1
-position = Vector2(-13, -195)
 texture = ExtResource("3_p0nl4")
 
-[node name="StationProps" type="Sprite2D" parent="."]
+[node name="StationProps" type="Sprite2D" parent="map"]
 z_index = 3
-position = Vector2(-13, -195)
 texture = ExtResource("4_da165")
 
-[node name="Floor" type="Sprite2D" parent="."]
-position = Vector2(-13, -193)
+[node name="Floor" type="Sprite2D" parent="map"]
 texture = ExtResource("5_r8ukj")
 
-[node name="EscalatorWall01" type="Sprite2D" parent="."]
-z_index = 2
-position = Vector2(-13, -195)
-texture = ExtResource("6_1colc")
-
-[node name="Escalator01" type="Sprite2D" parent="."]
-z_index = 2
-position = Vector2(-13, -195)
-texture = ExtResource("7_hwiky")
-
-[node name="TrainStationBackground" type="Sprite2D" parent="."]
-position = Vector2(-13, -195)
+[node name="TrainStationBackground" type="Sprite2D" parent="map"]
 texture = ExtResource("8_mhwaj")
+
+[node name="EscalatorWallAnimation" type="AnimatedSprite2D" parent="map"]
+z_index = 2
+sprite_frames = SubResource("SpriteFrames_efg5n")
+animation = &"wall"
+autoplay = "wall"
+
+[node name="EscalatorAnimation" type="AnimatedSprite2D" parent="map"]
+z_index = 2
+sprite_frames = SubResource("SpriteFrames_sxdgg")
+animation = &"escalator"
+autoplay = "escalator"
+
+[node name="limits" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="limits"]
+build_mode = 1
+polygon = PackedVector2Array(-132, -5, -111, -5, -108, -8, -108, -24, 252, -23, 252, -8, 255, -8, 255, -5, 278, -5, 278, 194, -321, 194, -321, 119, -318, 119, -317, 119, -317, 104, -314, 104, -314, 101, -311, 101, -311, 98, -290, 98, -290, 95, -157, 95, -156, 95, -156, 110, -153, 110, -153, 113, -150, 113, -150, 116, -138, 116, -137, 116, -137, 113, -134, 113, -134, 110, -131, 110, -131, 73, -134, 73, -135, 73, -135, 70, -138, 70, -138, 67, -159, 67, -159, 66, -247, 22, -324, 22, -324, -50, -276, -50, -276, -53, -273, -53, -273, -50, -270, -50, -270, -47, -246, -47, -246, -44, -243, -44, -243, -40, -231, -40, -231, -34, -219, -34, -219, -28, -207, -28, -207, -22, -195, -22, -195, -16, -183, -16, -183, -11, -171, -11, -171, -4, -159, -4, -159, -1, -138, -1, -138, -5)
+
+[node name="Camera2D" type="Camera2D" parent="."]
