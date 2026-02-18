@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dvb65soh1j300"]
+[gd_scene load_steps=12 format=3 uid="uid://dvb65soh1j300"]
 
 [ext_resource type="Texture2D" uid="uid://dksq2ow0281yj" path="res://assets/train-station-exit/background.png" id="2_3a1lu"]
 [ext_resource type="Texture2D" uid="uid://h2xexr1r5uwa" path="res://assets/train-station-exit/border.png" id="3_jp1c7"]
@@ -10,45 +10,73 @@
 [ext_resource type="Texture2D" uid="uid://c528w4xr1ykxe" path="res://assets/train-station-map/escalator_wall_01.png" id="9_wv6xg"]
 [ext_resource type="Texture2D" uid="uid://g6lem43dp5tx" path="res://assets/train-station-map/escalator_01.png" id="10_el10v"]
 [ext_resource type="Texture2D" uid="uid://c030vsmoduo32" path="res://assets/train-station-map/train_01.png" id="10_wv6xg"]
+[ext_resource type="PackedScene" uid="uid://l8rglr0pslgo" path="res://tscn/player.tscn" id="11_el10v"]
 
 [node name="exit" type="Node2D"]
+position = Vector2(-1, 0)
 
-[node name="Background" type="Sprite2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="limits" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="limits"]
+build_mode = 1
+polygon = PackedVector2Array(-297, 7, -297, 79, -66, 79, -66, 7)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="limits"]
+build_mode = 1
+polygon = PackedVector2Array(66, 7, 66, 79, 297, 79, 297, 7)
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="limits"]
+build_mode = 1
+polygon = PackedVector2Array(-444, -117, -444, -84, -429, -84, -429, -69, -399, -69, -399, 150, -444, 150, -444, 177, 444, 177, 444, 150, 399, 150, 399, -69, 429, -69, 429, -84, 444, -84, 444, -117, 396, -117, 396, -117)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="limits"]
+build_mode = 1
+polygon = PackedVector2Array(-12, 25, 12, 25, 12, 58, -12, 58)
+
+[node name="map" type="Node" parent="."]
+
+[node name="Background" type="Sprite2D" parent="map"]
 texture = ExtResource("2_3a1lu")
 
-[node name="Border" type="Sprite2D" parent="."]
-z_index = 4
+[node name="Border" type="Sprite2D" parent="map"]
+z_index = 5
 texture = ExtResource("3_jp1c7")
 
-[node name="ElevatorDown01" type="Sprite2D" parent="."]
-z_index = 2
+[node name="ElevatorDown" type="Sprite2D" parent="map"]
+z_index = 5
 texture = ExtResource("4_t1e13")
 
-[node name="ElevatorUp01" type="Sprite2D" parent="."]
-z_index = 2
+[node name="ElevatorUp" type="Sprite2D" parent="map"]
+z_index = 5
 texture = ExtResource("5_or5sd")
 
-[node name="Floor" type="Sprite2D" parent="."]
+[node name="Floor" type="Sprite2D" parent="map"]
 z_index = 1
 texture = ExtResource("6_pegxy")
 
-[node name="Props" type="Sprite2D" parent="."]
-z_index = 1
+[node name="Props" type="Sprite2D" parent="map"]
+z_index = 3
 texture = ExtResource("7_e6cp8")
 
-[node name="Wall" type="Sprite2D" parent="."]
-z_index = 1
+[node name="Wall" type="Sprite2D" parent="map"]
+z_index = 4
 texture = ExtResource("8_6epy1")
 
-[node name="EscalatorWall01" type="Sprite2D" parent="."]
+[node name="EscalatorWall" type="Sprite2D" parent="map"]
 position = Vector2(288, -259.5)
 texture = ExtResource("9_wv6xg")
 
-[node name="Escalator01" type="Sprite2D" parent="."]
+[node name="Escalator" type="Sprite2D" parent="map"]
 position = Vector2(288, -259.5)
 texture = ExtResource("10_el10v")
 
-[node name="Train01" type="Sprite2D" parent="."]
-z_index = 1
+[node name="Train" type="Sprite2D" parent="map"]
+z_index = 6
 position = Vector2(-42, 322)
 texture = ExtResource("10_wv6xg")
+
+[node name="Player" parent="." instance=ExtResource("11_el10v")]
+z_index = 6
+position = Vector2(60, 131)
