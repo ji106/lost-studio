@@ -4,6 +4,10 @@ extends CharacterBody2D
 @export var speed: float = 100.0
 @onready var animated_sprite_2d = $AnimatedSprite2D
 
+# --- VARIABLES DE ESPERA (IDLE) ---
+var tiempo_quieto : float = 0.0
+var ultima_direccion : String = "Abajo" # Por defecto miramos hacia abajo al empezar
+
 # --- VARIABLES DE VIDA ---
 @export var vidas_maximas : int = 3
 var vidas_actuales : int = 0
@@ -11,6 +15,9 @@ var vidas_actuales : int = 0
 @export var textura_lleno : Texture2D
 @export var textura_vacio : Texture2D
 @onready var contenedor_corazones = $Vidas/ContenedorCorazones
+
+# --- VARIABLES DE INTERACCIÓN ---
+var cerca_del_tren : bool = false
 
 func _physics_process(delta: float) -> void:
 	var direction = Vector2.ZERO
@@ -25,37 +32,57 @@ func _physics_process(delta: float) -> void:
 		direction.y -= 1
 
 	if direction.length() > 0:
+		# --- EL JUGADOR SE MUEVE ---
 		direction = direction.normalized()
 		velocity = direction * speed
+		tiempo_quieto = 0.0 # Reseteamos el contador si se mueve
 		update_animation(direction)
 	else:
+		# --- EL JUGADOR ESTÁ QUIETO ---
 		velocity = Vector2.ZERO
-		animated_sprite_2d.stop()
+		tiempo_quieto += delta # Empezamos a sumar segundos
+		
+		if tiempo_quieto >= 5.0:
+			# Han pasado 5 segundos, reproducimos la animación de Stop correspondiente
+			var animacion_stop = "Stop" + ultima_direccion
+			if animated_sprite_2d.animation != animacion_stop:
+				animated_sprite_2d.play(animacion_stop)
+		else:
+			# Si aún no han pasado 5 segundos, simplemente paramos la animación de caminar
+			if not animated_sprite_2d.animation.begins_with("Stop"):
+				animated_sprite_2d.stop()
 	
 	move_and_slide()
+	
+	# --- LÓGICA DE INTERACTUAR ---
+	if Input.is_action_just_pressed("interactuar"):
+		if cerca_del_tren:
+			print("Subiendo al tren... ¡Iniciando transición!")
+			# Llamamos a nuestro nuevo Autoload en lugar del get_tree()
+			TransitionScreen.cambiar_escena("res://tscn/exit.tscn")
 
 func update_animation(direction: Vector2) -> void:
 	var animation_name: String = animated_sprite_2d.animation
 
-	# --- CORRECCIÓN DE DESFASES (OFFSET) ---
+	# --- CORRECCIÓN DE DESFASES (OFFSET) Y ACTUALIZACIÓN DE DIRECCIÓN ---
 	if direction.x > 0:
 		animation_name = "Derecha"
-		# Modifica la 'Y' si el personaje tiembla al mirar a la derecha
+		ultima_direccion = "Derecha"
 		animated_sprite_2d.offset = Vector2(0, 0) 
 		
 	elif direction.x < 0:
 		animation_name = "Izquierda"
-		# Modifica la 'Y' si el personaje tiembla al mirar a la izquierda
+		ultima_direccion = "Izquierda"
 		animated_sprite_2d.offset = Vector2(0, 0)
 		
 	elif direction.y > 0:
 		animation_name = "Abajo"
-		# Esta suele ser la animación base, quizás la puedas dejar en (0,0)
+		ultima_direccion = "Abajo"
 		animated_sprite_2d.offset = Vector2(0, 0)
 		
 	elif direction.y < 0:
 		animation_name = "Arriba"
-		# Modifica la 'Y' si el personaje tiembla al mirar hacia arriba
+		ultima_direccion = "Arriba"
 		animated_sprite_2d.offset = Vector2(0, 0) 
 	
 	# Reproducir animación
@@ -92,11 +119,23 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 func _on_area_2d_body_exited(body: Node2D) -> void:
 	pass
 
-func set_congelado(estoy_congelado: bool):
-	# 1. Encendemos o apagamos el movimiento 
-	set_physics_process(!estoy_congelado)
+# --- FUNCIÓN PARA USAR ESCALERAS MECÁNICAS ---
+func usar_escalera(destino: Vector2, tiempo: float, animacion_parado: String):
+	set_physics_process(false)
+	velocity = Vector2.ZERO
 	
-	# 2. Si nos congelan, obligamos a parar la animación
+	animated_sprite_2d.play(animacion_parado)
+	animated_sprite_2d.stop() 
+	
+	var tween = create_tween()
+	tween.tween_property(self, "global_position", destino, tiempo)
+	tween.tween_callback(terminar_escalera)
+
+func terminar_escalera():
+	set_physics_process(true)
+
+func set_congelado(estoy_congelado: bool):
+	set_physics_process(!estoy_congelado)
 	if estoy_congelado:
 		velocity = Vector2.ZERO
 		animated_sprite_2d.stop()
