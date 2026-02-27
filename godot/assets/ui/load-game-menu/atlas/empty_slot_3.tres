@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://cyoi5ecsn1web"]
+
+[ext_resource type="Texture2D" uid="uid://cppg6r01pm2af" path="res://assets/ui/load-game-menu/empty_slot_03.png" id="1_nd4jy"]
+
+[resource]
+atlas = ExtResource("1_nd4jy")
+region = Rect2(458.0282, 468.03073, 459.95514, 89.95926)

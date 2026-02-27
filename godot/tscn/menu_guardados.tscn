@@ -1,0 +1,69 @@
+[gd_scene load_steps=11 format=3 uid="uid://di3xoj1c4xd1l"]
+
+[ext_resource type="Script" uid="uid://b8mnoalb2kfn4" path="res://scripts/menu_guardados.gd" id="1_28n63"]
+[ext_resource type="Texture2D" uid="uid://caetd2o5oq62k" path="res://assets/ui/load-game-menu/background.png" id="1_gmbqe"]
+[ext_resource type="Texture2D" uid="uid://ck14q4658kbik" path="res://assets/ui/load-game-menu/title.png" id="5_c83qb"]
+[ext_resource type="Texture2D" uid="uid://ttcx11gi04ib" path="res://assets/ui/load-game-menu/atlas/load_game_2.tres" id="5_n5f2w"]
+[ext_resource type="Texture2D" uid="uid://csjgik8x616mh" path="res://assets/ui/load-game-menu/atlas/empty_slot_1.tres" id="6_ocaul"]
+[ext_resource type="Texture2D" uid="uid://duahf0goqvd7x" path="res://assets/ui/load-game-menu/atlas/empty_slot_2.tres" id="7_6qa3f"]
+[ext_resource type="Texture2D" uid="uid://bg1sgdx5tdcpu" path="res://assets/ui/load-game-menu/atlas/btn_back.tres" id="7_28n63"]
+[ext_resource type="Texture2D" uid="uid://d11i18ccykcu2" path="res://assets/ui/load-game-menu/atlas/load_game_1.tres" id="7_ocaul"]
+[ext_resource type="Texture2D" uid="uid://du2vwjiucjo2a" path="res://assets/ui/load-game-menu/atlas/load_game_3.tres" id="7_r7yas"]
+[ext_resource type="Texture2D" uid="uid://cyoi5ecsn1web" path="res://assets/ui/load-game-menu/atlas/empty_slot_3.tres" id="8_c83qb"]
+
+[node name="Menu Guardados" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_28n63")
+img_vacio_1 = ExtResource("6_ocaul")
+img_ocupado_1 = ExtResource("7_ocaul")
+img_vacio_2 = ExtResource("7_6qa3f")
+img_ocupado_2 = ExtResource("5_n5f2w")
+img_vacio_3 = ExtResource("8_c83qb")
+img_ocupado_3 = ExtResource("7_r7yas")
+
+[node name="screen" type="Node" parent="."]
+
+[node name="Background" type="Sprite2D" parent="screen"]
+texture = ExtResource("1_gmbqe")
+
+[node name="Title" type="Sprite2D" parent="screen"]
+texture = ExtResource("5_c83qb")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+z_index = 2
+layout_mode = 0
+offset_left = -229.0
+offset_top = -127.0
+offset_right = 230.0
+offset_bottom = 174.0
+theme_override_constants/separation = 17
+
+[node name="Slot1" type="TextureButton" parent="VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("6_ocaul")
+
+[node name="Slot2" type="TextureButton" parent="VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("7_6qa3f")
+
+[node name="Slot3" type="TextureButton" parent="VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("8_c83qb")
+
+[node name="BtnBack" type="TextureButton" parent="."]
+z_index = 2
+layout_mode = 0
+offset_left = -130.0
+offset_top = 263.0
+offset_right = 129.0
+offset_bottom = 320.0
+texture_normal = ExtResource("7_28n63")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.84, 0.844)
+
+[connection signal="pressed" from="VBoxContainer/Slot1" to="." method="_on_slot_1_pressed"]
+[connection signal="pressed" from="VBoxContainer/Slot2" to="." method="_on_slot_2_pressed"]
+[connection signal="pressed" from="VBoxContainer/Slot3" to="." method="_on_slot_3_pressed"]
+[connection signal="pressed" from="BtnBack" to="." method="_on_btn_back_pressed"]

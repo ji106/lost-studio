@@ -19,6 +19,28 @@ var vidas_actuales : int = 0
 # --- VARIABLES DE INTERACCIÓN ---
 var cerca_del_tren : bool = false
 
+# --- INICIALIZACIÓN (SISTEMA DE CARGA Y VIDAS) ---
+func _ready():
+	# 1. Por defecto, le damos vida completa al nacer
+	vidas_actuales = vidas_maximas 
+	
+	# 2. SISTEMA DE CARGA: Comprobamos si el Global nos está mandando datos
+	if Global.cargando_partida == true:
+		print("🚀 Teletransportando jugador a posición guardada...")
+		
+		# Sobreescribimos la posición con la que estaba guardada
+		global_position = Global.game_data["player_position"]
+		
+		# Sobreescribimos las vidas si están guardadas
+		if "vidas" in Global.game_data:
+			vidas_actuales = Global.game_data["vidas"]
+			
+		# ¡Muy importante! Apagamos el interruptor para que no se repita
+		Global.cargando_partida = false
+		
+	# 3. Actualizamos los corazones en pantalla
+	actualizar_interfaz()
+
 func _physics_process(delta: float) -> void:
 	var direction = Vector2.ZERO
 

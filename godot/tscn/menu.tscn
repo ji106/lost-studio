@@ -1,0 +1,57 @@
+[gd_scene load_steps=7 format=3 uid="uid://bptm8bweg1odg"]
+
+[ext_resource type="Script" uid="uid://yx567uv56555" path="res://scripts/menu.gd" id="1_ku4py"]
+[ext_resource type="Texture2D" uid="uid://7wvklheoagrg" path="res://assets/ui/main-menu/background.png" id="2_ku4py"]
+[ext_resource type="Texture2D" uid="uid://duiowerbka35q" path="res://assets/ui/main-menu/atlas/btn_new_game.tres" id="4_sib52"]
+[ext_resource type="Texture2D" uid="uid://bvxdu50tkqeic" path="res://assets/ui/main-menu/atlas/btn_load_game.tres" id="5_ku4py"]
+[ext_resource type="Texture2D" uid="uid://bw65n1lrmpiax" path="res://assets/ui/main-menu/atlas/btn_settings.tres" id="6_7pe2c"]
+[ext_resource type="Texture2D" uid="uid://cimr4t7jo1g5x" path="res://assets/ui/main-menu/title.png" id="6_sfc8j"]
+
+[node name="menu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_ku4py")
+
+[node name="screen" type="Node" parent="."]
+
+[node name="Background" type="Sprite2D" parent="screen"]
+position = Vector2(-2, -3)
+texture = ExtResource("2_ku4py")
+
+[node name="Title" type="Sprite2D" parent="screen"]
+position = Vector2(3, 0)
+texture = ExtResource("6_sfc8j")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.84, 0.844)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+z_index = 2
+layout_mode = 0
+offset_left = -131.0
+offset_top = -47.0
+offset_right = 128.0
+offset_bottom = 158.0
+theme_override_constants/separation = 17
+
+[node name="BtnNewGame" type="TextureButton" parent="VBoxContainer"]
+z_index = 1
+layout_mode = 2
+size_flags_horizontal = 5
+texture_normal = ExtResource("4_sib52")
+
+[node name="BtnLoadGame" type="TextureButton" parent="VBoxContainer"]
+z_index = 1
+layout_mode = 2
+size_flags_horizontal = 5
+texture_normal = ExtResource("5_ku4py")
+
+[node name="BtnSettings" type="TextureButton" parent="VBoxContainer"]
+z_index = 1
+layout_mode = 2
+size_flags_horizontal = 5
+texture_normal = ExtResource("6_7pe2c")
+
+[connection signal="pressed" from="VBoxContainer/BtnNewGame" to="." method="_on_btn_new_game_pressed"]
+[connection signal="pressed" from="VBoxContainer/BtnLoadGame" to="." method="_on_btn_load_game_pressed"]
+[connection signal="pressed" from="VBoxContainer/BtnSettings" to="." method="_on_btn_settings_pressed"]

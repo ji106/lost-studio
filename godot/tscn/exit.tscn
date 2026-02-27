@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dvb65soh1j300"]
+[gd_scene load_steps=13 format=3 uid="uid://dvb65soh1j300"]
 
 [ext_resource type="Texture2D" uid="uid://dksq2ow0281yj" path="res://assets/train-station-exit/background.png" id="2_3a1lu"]
 [ext_resource type="Texture2D" uid="uid://h2xexr1r5uwa" path="res://assets/train-station-exit/border.png" id="3_jp1c7"]
@@ -11,9 +11,9 @@
 [ext_resource type="Texture2D" uid="uid://g6lem43dp5tx" path="res://assets/train-station-map/escalator_01.png" id="10_el10v"]
 [ext_resource type="Texture2D" uid="uid://c030vsmoduo32" path="res://assets/train-station-map/train_01.png" id="10_wv6xg"]
 [ext_resource type="PackedScene" uid="uid://l8rglr0pslgo" path="res://tscn/player.tscn" id="11_el10v"]
+[ext_resource type="PackedScene" uid="uid://bieb007mfxyfl" path="res://tscn/menu_rapido.tscn" id="12_laxcc"]
 
-[node name="exit" type="Node2D"]
-position = Vector2(-1, 0)
+[node name="TrainExit" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
@@ -80,3 +80,5 @@ texture = ExtResource("10_wv6xg")
 [node name="Player" parent="." instance=ExtResource("11_el10v")]
 z_index = 6
 position = Vector2(60, 131)
+
+[node name="MenuPausa" parent="." instance=ExtResource("12_laxcc")]

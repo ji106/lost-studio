@@ -11,11 +11,13 @@ config_version=5
 [application]
 
 config/name="TFG"
+run/main_scene="uid://bptm8bweg1odg"
 config/features=PackedStringArray("4.5", "Forward Plus")
 
 [autoload]
 
-TransitionScreen="*res://transition_screen.tscn"
+TransitionScreen="*res://tscn/transition_screen.tscn"
+Global="*res://scripts/global.gd"
 
 [input]
 

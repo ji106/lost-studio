@@ -158,7 +158,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"Abajo",
-"speed": 5.0
+"speed": 7.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -175,7 +175,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"Arriba",
-"speed": 5.0
+"speed": 7.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -192,7 +192,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"Derecha",
-"speed": 5.0
+"speed": 7.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -209,7 +209,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"Izquierda",
-"speed": 5.0
+"speed": 7.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -298,8 +298,9 @@ textura_vacio = ExtResource("3_6sl1v")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_vl8ci")
-animation = &"StopIzquierda"
-frame_progress = 0.6242476
+animation = &"Izquierda"
+frame = 2
+frame_progress = 0.28635508
 
 [node name="Camera2D" type="Camera2D" parent="."]
 

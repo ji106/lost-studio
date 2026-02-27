@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://6vyo1hug3pud"]
+
+[ext_resource type="Texture2D" uid="uid://d2mgh2ipuw2oc" path="res://assets/game-01/level-03/security_keypad.png" id="1_1ntvo"]
+
+[node name="level-03" type="Node2D"]
+
+[node name="SecurityKeypad" type="Sprite2D" parent="."]
+texture = ExtResource("1_1ntvo")
+
+[node name="limits" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="limits"]
+build_mode = 1
+polygon = PackedVector2Array(-209, -81, -209, -57, -183, -57, -183, 33, -209, 33, -209, 45, -186, 45, -173, 67, -173, 101, -164, 101, -164, 145, -68, 145, -68, 177, -4, 177, -4, 145, 209, 145, 209, -62, 143, -62, 132, -65, 111, -65, 111, -81)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="limits"]
+build_mode = 1
+polygon = PackedVector2Array(61, 77, 61, 121, 154, 121, 154, 111, 209, 111, 209, 13, 195, 13, 195, 21, 161, 21, 161, 71, 141, 71, 141, 25, 75, 25, 75, 71, 71, 71)
