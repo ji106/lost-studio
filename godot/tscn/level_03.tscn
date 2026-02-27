@@ -1,11 +1,31 @@
-[gd_scene load_steps=2 format=3 uid="uid://6vyo1hug3pud"]
+[gd_scene load_steps=25 format=3 uid="uid://6vyo1hug3pud"]
 
 [ext_resource type="Texture2D" uid="uid://d2mgh2ipuw2oc" path="res://assets/game-01/level-03/security_keypad.png" id="1_1ntvo"]
+[ext_resource type="Texture2D" uid="uid://c16y73svtjhl6" path="res://assets/game-01/level-03/armchair_right.png" id="3_1pqfp"]
+[ext_resource type="Texture2D" uid="uid://dq2s878vpfq1g" path="res://assets/game-01/level-03/bookshelf.png" id="4_gtw3o"]
+[ext_resource type="Texture2D" uid="uid://vbgc6vv3y5w7" path="res://assets/game-01/level-03/border.png" id="5_a1nhg"]
+[ext_resource type="Texture2D" uid="uid://bot8ua0wklnff" path="res://assets/game-01/level-03/decor_shelf_right.png" id="6_le761"]
+[ext_resource type="Texture2D" uid="uid://dy1hpjdtbqaon" path="res://assets/game-01/level-03/door.png" id="7_rfx57"]
+[ext_resource type="Texture2D" uid="uid://pfcx7lu1w2gb" path="res://assets/game-01/level-03/double_sofa_up.png" id="8_e3dg2"]
+[ext_resource type="Texture2D" uid="uid://dppdgy4ux4sok" path="res://assets/game-01/level-03/floor.png" id="9_s056r"]
+[ext_resource type="Texture2D" uid="uid://vr17477x3kfg" path="res://assets/game-01/level-03/floor_lamp.png" id="10_1vpro"]
+[ext_resource type="Texture2D" uid="uid://dc78f5ruad6jm" path="res://assets/game-01/level-03/mobile.png" id="11_8cymj"]
+[ext_resource type="Texture2D" uid="uid://bj0fglawvc4ma" path="res://assets/game-01/level-03/plant.png" id="12_x88xk"]
+[ext_resource type="Texture2D" uid="uid://4f5ltysgrhsq" path="res://assets/game-01/level-03/rug.png" id="13_qspbx"]
+[ext_resource type="Texture2D" uid="uid://3lqebbukluvh" path="res://assets/game-01/level-03/single_sofa_left.png" id="14_ehbwa"]
+[ext_resource type="Texture2D" uid="uid://ciqv0rjls73pd" path="res://assets/game-01/level-03/table.png" id="15_jp8op"]
+[ext_resource type="Texture2D" uid="uid://dpg2evb0ereu" path="res://assets/game-01/level-03/interactive/mobile/apps.png" id="16_1vpro"]
+[ext_resource type="Texture2D" uid="uid://dg4unum1to87l" path="res://assets/game-01/level-03/wall.png" id="16_ohyrr"]
+[ext_resource type="Texture2D" uid="uid://b82my4gxqjhwy" path="res://assets/game-01/level-03/interactive/mobile/app_icon_music.png" id="17_8cymj"]
+[ext_resource type="Texture2D" uid="uid://c7c7lmh373r8f" path="res://assets/game-01/level-03/interactive/mobile/app_icon_notes.png" id="18_x88xk"]
+[ext_resource type="Texture2D" uid="uid://dhqwkghyx3ri" path="res://assets/game-01/level-03/interactive/mobile/mobile.png" id="19_qspbx"]
+[ext_resource type="Texture2D" uid="uid://bs8n0qaaxtm1f" path="res://assets/game-01/level-03/interactive/mobile/music_screen_pause.png" id="20_ehbwa"]
+[ext_resource type="Texture2D" uid="uid://cmsgcd2862efu" path="res://assets/game-01/level-03/interactive/mobile/music_screen_play.png" id="21_jp8op"]
+[ext_resource type="Texture2D" uid="uid://bttul2a05hd1a" path="res://assets/game-01/level-03/interactive/mobile/navigation_bar.png" id="22_ohyrr"]
+[ext_resource type="Texture2D" uid="uid://3mhc6stbg4s8" path="res://assets/game-01/level-03/interactive/mobile/screen.png" id="23_2cvt0"]
+[ext_resource type="Texture2D" uid="uid://balwvd5t8b56h" path="res://assets/game-01/level-03/interactive/note/note.png" id="24_sl7do"]
 
 [node name="level-03" type="Node2D"]
-
-[node name="SecurityKeypad" type="Sprite2D" parent="."]
-texture = ExtResource("1_1ntvo")
 
 [node name="limits" type="StaticBody2D" parent="."]
 
@@ -16,3 +36,115 @@ polygon = PackedVector2Array(-209, -81, -209, -57, -183, -57, -183, 33, -209, 33
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="limits"]
 build_mode = 1
 polygon = PackedVector2Array(61, 77, 61, 121, 154, 121, 154, 111, 209, 111, 209, 13, 195, 13, 195, 21, 161, 21, 161, 71, 141, 71, 141, 25, 75, 25, 75, 71, 71, 71)
+
+[node name="map" type="Node" parent="."]
+
+[node name="ArmchairRight" type="Sprite2D" parent="map"]
+z_index = 2
+texture = ExtResource("3_1pqfp")
+
+[node name="Bookshelf" type="Sprite2D" parent="map"]
+z_index = 1
+texture = ExtResource("4_gtw3o")
+
+[node name="Border" type="Sprite2D" parent="map"]
+z_index = 1
+texture = ExtResource("5_a1nhg")
+
+[node name="DecorShelfRight" type="Sprite2D" parent="map"]
+z_index = 1
+texture = ExtResource("6_le761")
+
+[node name="Door" type="Sprite2D" parent="map"]
+z_index = 1
+texture = ExtResource("7_rfx57")
+
+[node name="DoubleSofaUp" type="Sprite2D" parent="map"]
+z_index = 1
+texture = ExtResource("8_e3dg2")
+
+[node name="Floor" type="Sprite2D" parent="map"]
+texture = ExtResource("9_s056r")
+
+[node name="FloorLamp" type="Sprite2D" parent="map"]
+z_index = 1
+texture = ExtResource("10_1vpro")
+
+[node name="Mobile" type="Sprite2D" parent="map"]
+z_index = 1
+texture = ExtResource("11_8cymj")
+
+[node name="Plant" type="Sprite2D" parent="map"]
+z_index = 1
+texture = ExtResource("12_x88xk")
+
+[node name="Rug" type="Sprite2D" parent="map"]
+z_index = 1
+texture = ExtResource("13_qspbx")
+
+[node name="SecurityKeypad2" type="Sprite2D" parent="map"]
+z_index = 1
+texture = ExtResource("1_1ntvo")
+
+[node name="SingleSofaLeft" type="Sprite2D" parent="map"]
+texture = ExtResource("14_ehbwa")
+
+[node name="Table" type="Sprite2D" parent="map"]
+texture = ExtResource("15_jp8op")
+
+[node name="Wall" type="Sprite2D" parent="map"]
+texture = ExtResource("16_ohyrr")
+
+[node name="mobile" type="Node" parent="."]
+
+[node name="Apps" type="Sprite2D" parent="mobile"]
+z_index = 1
+position = Vector2(-600, 224)
+texture = ExtResource("16_1vpro")
+
+[node name="AppIconMusic" type="Sprite2D" parent="mobile"]
+z_index = 1
+position = Vector2(-600, 224)
+texture = ExtResource("17_8cymj")
+
+[node name="AppIconNotes" type="Sprite2D" parent="mobile"]
+z_index = 1
+position = Vector2(-600, 224)
+texture = ExtResource("18_x88xk")
+
+[node name="Mobile" type="Sprite2D" parent="mobile"]
+z_index = 1
+position = Vector2(-600, 224)
+texture = ExtResource("19_qspbx")
+
+[node name="MusicScreenPause" type="Sprite2D" parent="mobile"]
+z_index = 1
+position = Vector2(-780, 216)
+texture = ExtResource("20_ehbwa")
+
+[node name="MusicScreenPlay" type="Sprite2D" parent="mobile"]
+position = Vector2(-727, 216)
+texture = ExtResource("21_jp8op")
+
+[node name="NavigationBar" type="Sprite2D" parent="mobile"]
+z_index = 1
+position = Vector2(-600, 224)
+texture = ExtResource("22_ohyrr")
+
+[node name="Screen" type="Sprite2D" parent="mobile"]
+position = Vector2(-600, 224)
+texture = ExtResource("23_2cvt0")
+
+[node name="Note" type="Sprite2D" parent="mobile"]
+position = Vector2(-394, 223)
+texture = ExtResource("24_sl7do")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -457.0
+offset_top = 147.0
+offset_right = -279.0
+offset_bottom = 198.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 8
+text = "Hola soy marcos
+"

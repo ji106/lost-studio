@@ -1,13 +1,17 @@
 extends Control
 
-# --- REFERENCIAS A LOS BOTONES ---
-# Asegúrate de que los nombres coincidan con los de tu VBoxContainer
+# --- REFERENCIAS A LOS NODOS ---
 @onready var btn_slot_1 = $VBoxContainer/Slot1
 @onready var btn_slot_2 = $VBoxContainer/Slot2
 @onready var btn_slot_3 = $VBoxContainer/Slot3
+@onready var titulo_menu = $screen/Title  # <--- NUEVO: Arrastra aquí tu nodo TextureRect si se llama distinto
 
-# --- IMÁGENES (TEXTURAS) ---
-# Aquí arrastraremos las imágenes en el Inspector
+# --- IMÁGENES DE TÍTULO (Arrastrar en Inspector) ---
+@export_group("Titulos del Menu")
+@export var img_titulo_new_game : Texture2D # <--- Arrastra la imagen "NEW GAME"
+@export var img_titulo_load_game : Texture2D # <--- Arrastra la imagen "LOAD GAME"
+
+# --- IMÁGENES DE SLOTS ---
 @export_group("Texturas Slot 1")
 @export var img_vacio_1 : Texture2D
 @export var img_ocupado_1 : Texture2D
@@ -22,6 +26,14 @@ extends Control
 
 func _ready():
 	actualizar_aspecto_botones()
+	actualizar_titulo() # <--- Llamamos a la nueva función
+
+func actualizar_titulo():
+	# El Global.modo_menu nos dice si venimos de pulsar "New Game" o "Load Game"
+	if Global.modo_menu == "NEW":
+		titulo_menu.texture = img_titulo_new_game
+	elif Global.modo_menu == "LOAD":
+		titulo_menu.texture = img_titulo_load_game
 
 func actualizar_aspecto_botones():
 	# --- SLOT 1 ---
@@ -56,9 +68,6 @@ func procesar_slot(numero_slot: int):
 			print("Slot vacío, no se puede cargar.")
 
 # --- SEÑALES ---
-# ¡IMPORTANTE! Como cambiaste los nombres de los botones a Slot1, Slot2...
-# Asegúrate de reconectar la señal "pressed()" de cada botón a estas funciones:
-
 func _on_slot_1_pressed():
 	procesar_slot(1)
 
