@@ -1,0 +1,222 @@
+[gd_scene load_steps=27 format=3 uid="uid://dplvaxnoxrmym"]
+
+[ext_resource type="Texture2D" uid="uid://drpaty1n6j4l4" path="res://assets/game-01/interactive/security_keypad/atlas/keypad_btn_0.tres" id="1_8m8ni"]
+[ext_resource type="Script" uid="uid://ceut4pskamnab" path="res://scripts/keypad.gd" id="1_eug6y"]
+[ext_resource type="Texture2D" uid="uid://dk1hy0e1uhn1t" path="res://assets/game-01/interactive/security_keypad/atlas/keypad_btn_1.tres" id="2_ukcqw"]
+[ext_resource type="Texture2D" uid="uid://qxt5s8g6dmn1" path="res://assets/game-01/interactive/security_keypad/atlas/keypad_btn_2.tres" id="3_gjbxl"]
+[ext_resource type="Texture2D" uid="uid://bkby1xw8qdsv6" path="res://assets/game-01/interactive/security_keypad/atlas/keypad_btn_3.tres" id="4_7o0qh"]
+[ext_resource type="Texture2D" uid="uid://dkida0u7jj78v" path="res://assets/game-01/interactive/security_keypad/atlas/keypad_btn_4.tres" id="5_no0n6"]
+[ext_resource type="Texture2D" uid="uid://74o7ivbq3p3t" path="res://assets/game-01/interactive/security_keypad/atlas/keypad_btn_5.tres" id="6_ukcqw"]
+[ext_resource type="Texture2D" uid="uid://d1audqamyuuqy" path="res://assets/game-01/interactive/security_keypad/atlas/keypad_btn_6.tres" id="7_eug6y"]
+[ext_resource type="Texture2D" uid="uid://bxps6b56etwjk" path="res://assets/game-01/interactive/security_keypad/atlas/keypad_btn_7.tres" id="8_fiwd7"]
+[ext_resource type="Texture2D" uid="uid://cfost2ptrg866" path="res://assets/game-01/interactive/security_keypad/atlas/keypad_btn_8.tres" id="9_7v5a0"]
+[ext_resource type="Texture2D" uid="uid://crwcdsdjdmkr5" path="res://assets/game-01/interactive/security_keypad/atlas/keypad_btn_9.tres" id="10_1vwf5"]
+[ext_resource type="Texture2D" uid="uid://bjv3dupla2r42" path="res://assets/game-01/interactive/security_keypad/atlas/keypad_btn_clear.tres" id="11_o3qts"]
+[ext_resource type="Texture2D" uid="uid://c2a0dnhlt5igd" path="res://assets/game-01/interactive/security_keypad/atlas/keypad_btn_enter.tres" id="12_bicja"]
+[ext_resource type="Texture2D" uid="uid://c4yl7qc2fq0d0" path="res://assets/game-01/interactive/security_keypad/security_keypad.png" id="13_aj0aa"]
+[ext_resource type="Texture2D" uid="uid://xh17nj1fub3w" path="res://assets/game-01/interactive/security_keypad/keypad_on_btn_0.png" id="17_roh0g"]
+[ext_resource type="Texture2D" uid="uid://b6e380p4ufy6h" path="res://assets/game-01/interactive/security_keypad/keypad_on_btn_1.png" id="18_1p75u"]
+[ext_resource type="Texture2D" uid="uid://p2ik5orairfa" path="res://assets/game-01/interactive/security_keypad/keypad_on_btn_2.png" id="19_530tn"]
+[ext_resource type="Texture2D" uid="uid://656ym7l4nd86" path="res://assets/game-01/interactive/security_keypad/keypad_on_btn_3.png" id="20_tikie"]
+[ext_resource type="Texture2D" uid="uid://cebqndsgeskay" path="res://assets/game-01/interactive/security_keypad/keypad_on_btn_4.png" id="21_7yrqk"]
+[ext_resource type="Texture2D" uid="uid://d4c4u3imbgohe" path="res://assets/game-01/interactive/security_keypad/keypad_on_btn_5.png" id="22_tptic"]
+[ext_resource type="Texture2D" uid="uid://csvq6po181hs6" path="res://assets/game-01/interactive/security_keypad/keypad_on_btn_6.png" id="23_8rcv4"]
+[ext_resource type="Texture2D" uid="uid://b0dw1g5fpd16c" path="res://assets/game-01/interactive/security_keypad/keypad_on_btn_7.png" id="24_r6qcx"]
+[ext_resource type="Texture2D" uid="uid://58bf61drnly3" path="res://assets/game-01/interactive/security_keypad/indicator_light_green.png" id="24_roh0g"]
+[ext_resource type="Texture2D" uid="uid://b1ccyt2r7gjyv" path="res://assets/game-01/interactive/security_keypad/indicator_light_red.png" id="25_1p75u"]
+[ext_resource type="Texture2D" uid="uid://dm4yvkeb6yhbo" path="res://assets/game-01/interactive/security_keypad/keypad_on_btn_8.png" id="25_gd84q"]
+[ext_resource type="Texture2D" uid="uid://b5vuo0mdufhvf" path="res://assets/game-01/interactive/security_keypad/keypad_on_btn_9.png" id="26_jgx37"]
+
+[node name="Keypad" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_eug6y")
+
+[node name="KeypadBtn0" type="TextureButton" parent="."]
+z_index = 1
+layout_mode = 0
+offset_left = -11.0
+offset_top = 27.0
+offset_right = 10.0
+offset_bottom = 48.0
+texture_normal = ExtResource("1_8m8ni")
+
+[node name="KeypadBtn1" type="TextureButton" parent="."]
+z_index = 1
+layout_mode = 0
+offset_left = -37.0
+offset_top = -51.0
+offset_right = -16.0
+offset_bottom = -30.0
+texture_normal = ExtResource("2_ukcqw")
+
+[node name="KeypadBtn2" type="TextureButton" parent="."]
+z_index = 1
+layout_mode = 0
+offset_left = -11.0
+offset_top = -51.0
+offset_right = 10.0
+offset_bottom = -30.0
+texture_normal = ExtResource("3_gjbxl")
+
+[node name="KeypadBtn3" type="TextureButton" parent="."]
+z_index = 1
+layout_mode = 0
+offset_left = 15.0
+offset_top = -51.0
+offset_right = 36.0
+offset_bottom = -30.0
+texture_normal = ExtResource("4_7o0qh")
+
+[node name="KeypadBtn4" type="TextureButton" parent="."]
+z_index = 1
+layout_mode = 0
+offset_left = -37.0
+offset_top = -25.0
+offset_right = -16.0
+offset_bottom = -4.0
+texture_normal = ExtResource("5_no0n6")
+
+[node name="KeypadBtn5" type="TextureButton" parent="."]
+z_index = 1
+layout_mode = 0
+offset_left = -11.0
+offset_top = -25.0
+offset_right = 10.0
+offset_bottom = -4.0
+texture_normal = ExtResource("6_ukcqw")
+
+[node name="KeypadBtn6" type="TextureButton" parent="."]
+z_index = 1
+layout_mode = 0
+offset_left = 15.0
+offset_top = -25.0
+offset_right = 36.0
+offset_bottom = -4.0
+texture_normal = ExtResource("7_eug6y")
+
+[node name="KeypadBtn7" type="TextureButton" parent="."]
+z_index = 1
+layout_mode = 0
+offset_left = -37.0
+offset_top = 1.0
+offset_right = -15.0
+offset_bottom = 22.0
+texture_normal = ExtResource("8_fiwd7")
+
+[node name="KeypadBtn8" type="TextureButton" parent="."]
+z_index = 1
+layout_mode = 0
+offset_left = -11.0
+offset_right = 10.0
+offset_bottom = 22.0
+texture_normal = ExtResource("9_7v5a0")
+
+[node name="KeypadBtn9" type="TextureButton" parent="."]
+z_index = 1
+layout_mode = 0
+offset_left = 15.0
+offset_right = 36.0
+offset_bottom = 22.0
+texture_normal = ExtResource("10_1vwf5")
+
+[node name="KeypadBtnClear" type="TextureButton" parent="."]
+z_index = 1
+layout_mode = 0
+offset_left = -37.0
+offset_top = 27.0
+offset_right = -16.0
+offset_bottom = 48.0
+texture_normal = ExtResource("11_o3qts")
+
+[node name="KeypadBtnEnter" type="TextureButton" parent="."]
+z_index = 1
+layout_mode = 0
+offset_left = 15.0
+offset_top = 27.0
+offset_right = 36.0
+offset_bottom = 48.0
+texture_normal = ExtResource("12_bicja")
+
+[node name="Label" type="Label" parent="."]
+z_index = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -56.0
+offset_top = -104.0
+offset_right = 6.0
+offset_bottom = -84.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "77777"
+horizontal_alignment = 1
+
+[node name="SecurityKeypad" type="Sprite2D" parent="."]
+texture = ExtResource("13_aj0aa")
+
+[node name="KeypadOnBtn0" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("17_roh0g")
+
+[node name="KeypadOnBtn1" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("18_1p75u")
+
+[node name="KeypadOnBtn2" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("19_530tn")
+
+[node name="KeypadOnBtn3" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("20_tikie")
+
+[node name="KeypadOnBtn4" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("21_7yrqk")
+
+[node name="KeypadOnBtn5" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("22_tptic")
+
+[node name="KeypadOnBtn6" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("23_8rcv4")
+
+[node name="KeypadOnBtn7" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("24_r6qcx")
+
+[node name="KeypadOnBtn8" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("25_gd84q")
+
+[node name="KeypadOnBtn9" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("26_jgx37")
+
+[node name="IndicatorLightGreen" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("24_roh0g")
+
+[node name="IndicatorLightRed" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("25_1p75u")
+
+[connection signal="pressed" from="KeypadBtn0" to="." method="_on_keypad_btn_0_pressed"]
+[connection signal="pressed" from="KeypadBtn1" to="." method="_on_keypad_btn_1_pressed"]
+[connection signal="pressed" from="KeypadBtn2" to="." method="_on_keypad_btn_2_pressed"]
+[connection signal="pressed" from="KeypadBtn3" to="." method="_on_keypad_btn_3_pressed"]
+[connection signal="pressed" from="KeypadBtn4" to="." method="_on_keypad_btn_4_pressed"]
+[connection signal="pressed" from="KeypadBtn5" to="." method="_on_keypad_btn_5_pressed"]
+[connection signal="pressed" from="KeypadBtn6" to="." method="_on_keypad_btn_6_pressed"]
+[connection signal="pressed" from="KeypadBtn7" to="." method="_on_keypad_btn_7_pressed"]
+[connection signal="pressed" from="KeypadBtn8" to="." method="_on_keypad_btn_8_pressed"]
+[connection signal="pressed" from="KeypadBtn9" to="." method="_on_keypad_btn_9_pressed"]
+[connection signal="pressed" from="KeypadBtnClear" to="." method="_on_keypad_btn_clear_pressed"]
+[connection signal="pressed" from="KeypadBtnEnter" to="." method="_on_keypad_btn_enter_pressed"]

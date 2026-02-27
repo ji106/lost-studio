@@ -134,13 +134,6 @@ func morir():
 	print(" Game Over")
 	get_tree().reload_current_scene()
 
-# --- SEÑALES ---
-func _on_area_2d_body_entered(body: Node2D) -> void:
-	pass
-
-func _on_area_2d_body_exited(body: Node2D) -> void:
-	pass
-
 # --- FUNCIÓN PARA USAR ESCALERAS MECÁNICAS ---
 func usar_escalera(destino: Vector2, tiempo: float, animacion_parado: String):
 	set_physics_process(false)
