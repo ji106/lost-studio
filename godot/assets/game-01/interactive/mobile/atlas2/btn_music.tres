@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://dcur7h4va5g50"]
+
+[ext_resource type="Texture2D" uid="uid://52cd7qcyiuo" path="res://assets/game-01/interactive/mobile/app_icon_music.png" id="1_8aimp"]
+
+[resource]
+atlas = ExtResource("1_8aimp")
+region = Rect2(188, 124, 18, 18)

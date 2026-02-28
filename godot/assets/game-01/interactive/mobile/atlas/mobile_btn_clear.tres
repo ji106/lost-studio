@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://3163fmwi0ily"]
+
+[ext_resource type="Texture2D" uid="uid://dwsxkvb1xex1a" path="res://assets/game-01/interactive/mobile/mobile_btn_clear.png" id="1_otima"]
+
+[resource]
+atlas = ExtResource("1_otima")
+region = Rect2(193, 240, 9, 14)

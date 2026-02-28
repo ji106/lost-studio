@@ -1,0 +1,370 @@
+[gd_scene load_steps=32 format=3 uid="uid://bgcibo32mb7op"]
+
+[ext_resource type="Script" uid="uid://cqd62ds32agbf" path="res://scripts/mobile.gd" id="1_kndtj"]
+[ext_resource type="Texture2D" uid="uid://ip4o1tl7mig" path="res://assets/game-01/interactive/mobile/apps.png" id="8_404sd"]
+[ext_resource type="Texture2D" uid="uid://irdxywmp3u5q" path="res://assets/game-01/interactive/mobile/mobile.png" id="12_amxb4"]
+[ext_resource type="Texture2D" uid="uid://dyg632khlklp6" path="res://assets/game-01/interactive/mobile/screen.png" id="13_y7yrc"]
+[ext_resource type="Texture2D" uid="uid://be1fljut5f2eb" path="res://assets/game-01/interactive/mobile/unlock_screen.png" id="17_kndtj"]
+[ext_resource type="Texture2D" uid="uid://g2tci05l6wr1" path="res://assets/game-01/interactive/mobile/input_bar_pin.png" id="18_yaply"]
+[ext_resource type="Texture2D" uid="uid://bmvqsmiwai027" path="res://assets/game-01/interactive/mobile/atlas/mobile_btn_0.tres" id="19_kndtj"]
+[ext_resource type="Texture2D" uid="uid://4iejoajmn4ky" path="res://assets/game-01/interactive/mobile/atlas/mobile_btn_1.tres" id="20_yaply"]
+[ext_resource type="Texture2D" uid="uid://dwwkmo12xkjb0" path="res://assets/game-01/interactive/mobile/atlas/mobile_btn_2.tres" id="21_krr7y"]
+[ext_resource type="Texture2D" uid="uid://s14uetc668oq" path="res://assets/game-01/interactive/mobile/atlas/mobile_btn_3.tres" id="22_gusex"]
+[ext_resource type="Texture2D" uid="uid://ch4kjkumr4ebq" path="res://assets/game-01/interactive/mobile/atlas/mobile_btn_4.tres" id="23_iinmw"]
+[ext_resource type="Texture2D" uid="uid://cwxxkxhubkret" path="res://assets/game-01/interactive/mobile/atlas2/btn_home.tres" id="23_kndtj"]
+[ext_resource type="Texture2D" uid="uid://bxhyqgo5am306" path="res://assets/game-01/interactive/mobile/atlas/mobile_btn_5.tres" id="24_83u7d"]
+[ext_resource type="Texture2D" uid="uid://b2011vfk25n0" path="res://assets/game-01/interactive/mobile/atlas/mobile_btn_6.tres" id="25_b5ahx"]
+[ext_resource type="Texture2D" uid="uid://bwsx82asf1h26" path="res://assets/game-01/interactive/mobile/atlas/mobile_btn_7.tres" id="26_r4u5m"]
+[ext_resource type="Texture2D" uid="uid://bus55ayveklxx" path="res://assets/game-01/interactive/mobile/atlas/mobile_btn_8.tres" id="27_d2r34"]
+[ext_resource type="Texture2D" uid="uid://dmlinshw6lq7k" path="res://assets/game-01/interactive/mobile/atlas/mobile_btn_9.tres" id="28_8v63b"]
+[ext_resource type="Texture2D" uid="uid://3163fmwi0ily" path="res://assets/game-01/interactive/mobile/atlas/mobile_btn_clear.tres" id="29_v8rj6"]
+[ext_resource type="Texture2D" uid="uid://ckhujx66tuv82" path="res://assets/game-01/interactive/mobile/atlas/mobile_btn_enter.tres" id="30_upjf5"]
+[ext_resource type="Texture2D" uid="uid://b6vulx6dus6mu" path="res://assets/game-01/interactive/mobile/pin_text.png" id="31_6dimy"]
+[ext_resource type="Texture2D" uid="uid://cnlaq6d3hh16k" path="res://assets/game-01/interactive/mobile/atlas2/code_text.tres" id="32_83u7d"]
+[ext_resource type="Texture2D" uid="uid://dcur7h4va5g50" path="res://assets/game-01/interactive/mobile/atlas2/btn_music.tres" id="32_gusex"]
+[ext_resource type="Texture2D" uid="uid://7tcbkcdiwu30" path="res://assets/game-01/interactive/mobile/atlas2/btn_play.tres" id="32_krr7y"]
+[ext_resource type="Texture2D" uid="uid://j5ow0mcjalle" path="res://assets/game-01/interactive/mobile/notes_screen.png" id="32_yaply"]
+[ext_resource type="Texture2D" uid="uid://dfgood73ttdyp" path="res://assets/game-01/interactive/mobile/atlas2/btn_pause.tres" id="33_gusex"]
+[ext_resource type="Texture2D" uid="uid://cxaiv3g42rcxm" path="res://assets/game-01/interactive/mobile/atlas2/btn_notes.tres" id="33_iinmw"]
+[ext_resource type="Texture2D" uid="uid://cjoea2qyki3gn" path="res://assets/game-01/interactive/mobile/atlas2/btn_hint.tres" id="34_83u7d"]
+[ext_resource type="Texture2D" uid="uid://kllwjjtc3bei" path="res://assets/game-01/interactive/mobile/unknown_screen.png" id="34_b5ahx"]
+[ext_resource type="Texture2D" uid="uid://c2ugjfodfesaw" path="res://assets/game-01/interactive/mobile/hint_text.png" id="35_r4u5m"]
+[ext_resource type="Texture2D" uid="uid://p5gtdcxp70bc" path="res://assets/game-01/interactive/mobile/input_bar_code.png" id="36_d2r34"]
+[ext_resource type="Texture2D" uid="uid://dx7pcfnjjdnnx" path="res://assets/game-01/interactive/mobile/atlas2/btn_submit.tres" id="37_b5ahx"]
+
+[node name="mobile" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -524.0
+offset_top = -319.0
+offset_right = -524.0
+offset_bottom = -319.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_kndtj")
+
+[node name="FondoMovil" type="TextureRect" parent="."]
+z_index = 2
+layout_mode = 0
+offset_left = 303.0
+offset_top = 130.0
+offset_right = 745.0
+offset_bottom = 508.0
+texture = ExtResource("12_amxb4")
+
+[node name="Pantallas" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 481.0
+offset_top = 238.0
+offset_right = 566.0
+offset_bottom = 402.0
+
+[node name="LockScreen" type="Control" parent="Pantallas"]
+anchors_preset = 0
+offset_left = 1.0
+offset_right = 85.0
+offset_bottom = 164.0
+
+[node name="LabelPIN" type="Label" parent="Pantallas/LockScreen"]
+z_index = 3
+layout_mode = 0
+offset_left = 17.0
+offset_top = 42.0
+offset_right = 63.0
+offset_bottom = 62.0
+
+[node name="MobileBtn0" type="TextureButton" parent="Pantallas/LockScreen"]
+z_index = 2
+layout_mode = 0
+offset_left = 37.0
+offset_top = 132.0
+offset_right = 47.0
+offset_bottom = 146.0
+texture_normal = ExtResource("19_kndtj")
+
+[node name="MobileBtn1" type="TextureButton" parent="Pantallas/LockScreen"]
+z_index = 2
+layout_mode = 0
+offset_left = 13.0
+offset_top = 72.0
+offset_right = 23.0
+offset_bottom = 86.0
+texture_normal = ExtResource("20_yaply")
+
+[node name="MobileBtn2" type="TextureButton" parent="Pantallas/LockScreen"]
+z_index = 2
+layout_mode = 0
+offset_left = 37.0
+offset_top = 72.0
+offset_right = 47.0
+offset_bottom = 86.0
+texture_normal = ExtResource("21_krr7y")
+
+[node name="MobileBtn3" type="TextureButton" parent="Pantallas/LockScreen"]
+z_index = 2
+layout_mode = 0
+offset_left = 61.0
+offset_top = 72.0
+offset_right = 71.0
+offset_bottom = 86.0
+texture_normal = ExtResource("22_gusex")
+
+[node name="MobileBtn4" type="TextureButton" parent="Pantallas/LockScreen"]
+z_index = 2
+layout_mode = 0
+offset_left = 13.0
+offset_top = 92.0
+offset_right = 23.0
+offset_bottom = 106.0
+texture_normal = ExtResource("23_iinmw")
+
+[node name="MobileBtn5" type="TextureButton" parent="Pantallas/LockScreen"]
+z_index = 2
+layout_mode = 0
+offset_left = 37.0
+offset_top = 92.0
+offset_right = 47.0
+offset_bottom = 106.0
+texture_normal = ExtResource("24_83u7d")
+
+[node name="MobileBtn6" type="TextureButton" parent="Pantallas/LockScreen"]
+z_index = 2
+layout_mode = 0
+offset_left = 61.0
+offset_top = 92.0
+offset_right = 71.0
+offset_bottom = 106.0
+texture_normal = ExtResource("25_b5ahx")
+
+[node name="MobileBtn7" type="TextureButton" parent="Pantallas/LockScreen"]
+z_index = 2
+layout_mode = 0
+offset_left = 13.0
+offset_top = 112.0
+offset_right = 23.0
+offset_bottom = 126.0
+texture_normal = ExtResource("26_r4u5m")
+
+[node name="MobileBtn8" type="TextureButton" parent="Pantallas/LockScreen"]
+z_index = 2
+layout_mode = 0
+offset_left = 37.0
+offset_top = 112.0
+offset_right = 47.0
+offset_bottom = 126.0
+texture_normal = ExtResource("27_d2r34")
+
+[node name="MobileBtn9" type="TextureButton" parent="Pantallas/LockScreen"]
+z_index = 2
+layout_mode = 0
+offset_left = 61.0
+offset_top = 112.0
+offset_right = 71.0
+offset_bottom = 126.0
+texture_normal = ExtResource("28_8v63b")
+
+[node name="MobileBtnClear" type="TextureButton" parent="Pantallas/LockScreen"]
+z_index = 2
+layout_mode = 0
+offset_left = 14.0
+offset_top = 132.0
+offset_right = 23.0
+offset_bottom = 146.0
+texture_normal = ExtResource("29_v8rj6")
+
+[node name="MobileBtnEnter" type="TextureButton" parent="Pantallas/LockScreen"]
+z_index = 2
+layout_mode = 0
+offset_left = 59.0
+offset_top = 132.0
+offset_right = 71.0
+offset_bottom = 146.0
+texture_normal = ExtResource("30_upjf5")
+
+[node name="PinText" type="Sprite2D" parent="Pantallas/LockScreen"]
+position = Vector2(42, 81)
+texture = ExtResource("31_6dimy")
+
+[node name="UnlockScreen" type="Sprite2D" parent="Pantallas/LockScreen"]
+z_index = -1
+position = Vector2(42, 81)
+texture = ExtResource("17_kndtj")
+
+[node name="InputBarPin" type="Sprite2D" parent="Pantallas/LockScreen"]
+position = Vector2(42, 81)
+texture = ExtResource("18_yaply")
+
+[node name="HomeScreen" type="Control" parent="Pantallas"]
+anchors_preset = 0
+offset_left = 2.0
+offset_right = 84.0
+offset_bottom = 162.0
+
+[node name="BtnMusic" type="TextureButton" parent="Pantallas/HomeScreen"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 16.0
+offset_right = 26.0
+offset_bottom = 34.0
+texture_normal = ExtResource("32_gusex")
+
+[node name="BtnNotes" type="TextureButton" parent="Pantallas/HomeScreen"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 16.0
+offset_right = 50.0
+offset_bottom = 34.0
+texture_normal = ExtResource("33_iinmw")
+
+[node name="BtnHint" type="TextureButton" parent="Pantallas/HomeScreen"]
+z_index = 1
+layout_mode = 0
+offset_left = 56.0
+offset_top = 68.0
+offset_right = 74.0
+offset_bottom = 86.0
+texture_normal = ExtResource("34_83u7d")
+
+[node name="Apps" type="Sprite2D" parent="Pantallas/HomeScreen"]
+position = Vector2(41, 81)
+texture = ExtResource("8_404sd")
+
+[node name="Screen" type="Sprite2D" parent="Pantallas/HomeScreen"]
+z_index = -1
+position = Vector2(41, 81)
+texture = ExtResource("13_y7yrc")
+
+[node name="BtnHome" type="TextureButton" parent="Pantallas/HomeScreen"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 158.0
+offset_right = 62.0
+offset_bottom = 160.0
+texture_normal = ExtResource("23_kndtj")
+
+[node name="MusicApp" type="Control" parent="Pantallas"]
+anchors_preset = 0
+offset_left = 2.0
+offset_right = 84.0
+offset_bottom = 162.0
+
+[node name="MusicPlayer" type="AudioStreamPlayer2D" parent="Pantallas/MusicApp"]
+
+[node name="BtnPlayPause" type="TextureButton" parent="Pantallas/MusicApp"]
+layout_mode = 0
+offset_left = 29.0
+offset_top = 70.0
+offset_right = 53.0
+offset_bottom = 94.0
+texture_normal = ExtResource("32_krr7y")
+texture_pressed = ExtResource("33_gusex")
+
+[node name="Screen" type="Sprite2D" parent="Pantallas/MusicApp"]
+z_index = -1
+position = Vector2(41, 81)
+texture = ExtResource("13_y7yrc")
+
+[node name="BtnHome" type="TextureButton" parent="Pantallas/MusicApp"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 158.0
+offset_right = 62.0
+offset_bottom = 160.0
+texture_normal = ExtResource("23_kndtj")
+
+[node name="NotesApp" type="Control" parent="Pantallas"]
+anchors_preset = 0
+offset_left = 2.0
+offset_right = 84.0
+offset_bottom = 162.0
+
+[node name="TextureRect" type="TextureRect" parent="Pantallas/NotesApp"]
+z_index = 1
+layout_mode = 0
+offset_left = 6.0
+offset_top = 22.0
+offset_right = 77.0
+offset_bottom = 145.0
+texture = ExtResource("32_83u7d")
+
+[node name="NotesScreen" type="Sprite2D" parent="Pantallas/NotesApp"]
+position = Vector2(41, 81)
+texture = ExtResource("32_yaply")
+
+[node name="BtnHome" type="TextureButton" parent="Pantallas/NotesApp"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 158.0
+offset_right = 62.0
+offset_bottom = 160.0
+texture_normal = ExtResource("23_kndtj")
+
+[node name="HintApp" type="Control" parent="Pantallas"]
+anchors_preset = 0
+offset_left = 2.0
+offset_right = 84.0
+offset_bottom = 162.0
+
+[node name="UnknownScreen" type="Sprite2D" parent="Pantallas/HintApp"]
+position = Vector2(41, 81)
+texture = ExtResource("34_b5ahx")
+
+[node name="HintText" type="Sprite2D" parent="Pantallas/HintApp"]
+position = Vector2(41, 81)
+texture = ExtResource("35_r4u5m")
+
+[node name="InputBarCode" type="Sprite2D" parent="Pantallas/HintApp"]
+position = Vector2(41, 81)
+texture = ExtResource("36_d2r34")
+
+[node name="BtnSubmit" type="TextureButton" parent="Pantallas/HintApp"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 106.0
+offset_right = 65.0
+offset_bottom = 121.0
+texture_normal = ExtResource("37_b5ahx")
+
+[node name="LineEdit" type="LineEdit" parent="Pantallas/HintApp"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 80.0
+offset_right = 75.0
+offset_bottom = 98.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_placeholder_color = Color(0.46229005, 0.46229094, 0.46229017, 0.6)
+theme_override_font_sizes/font_size = 8
+placeholder_text = "Whrite here"
+alignment = 1
+max_length = 4
+flat = true
+
+[node name="ResultadoLabel" type="Label" parent="Pantallas/HintApp"]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 127.0
+offset_right = 71.0
+offset_bottom = 147.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+
+[node name="BtnHome" type="TextureButton" parent="Pantallas/HintApp"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 158.0
+offset_right = 62.0
+offset_bottom = 160.0
+texture_normal = ExtResource("23_kndtj")
+
+[connection signal="pressed" from="Pantallas/LockScreen/MobileBtnClear" to="." method="_on_btn_clear_lock_pressed"]
+[connection signal="pressed" from="Pantallas/LockScreen/MobileBtnEnter" to="." method="_on_btn_enter_lock_pressed"]
+[connection signal="pressed" from="Pantallas/HomeScreen/BtnMusic" to="." method="_on_btn_app_music_pressed"]
+[connection signal="pressed" from="Pantallas/HomeScreen/BtnNotes" to="." method="_on_btn_app_notes_pressed"]
+[connection signal="pressed" from="Pantallas/HomeScreen/BtnHint" to="." method="_on_btn_app_hint_pressed"]
+[connection signal="pressed" from="Pantallas/HomeScreen/BtnHome" to="." method="_on_home_button_pressed"]
+[connection signal="toggled" from="Pantallas/MusicApp/BtnPlayPause" to="." method="_on_btn_play_pause_toggled"]
+[connection signal="pressed" from="Pantallas/MusicApp/BtnHome" to="." method="_on_home_button_pressed"]
+[connection signal="pressed" from="Pantallas/NotesApp/BtnHome" to="." method="_on_home_button_pressed"]
+[connection signal="pressed" from="Pantallas/HintApp/BtnSubmit" to="." method="_on_btn_submit_hint_pressed"]
+[connection signal="pressed" from="Pantallas/HintApp/BtnHome" to="." method="_on_home_button_pressed"]
