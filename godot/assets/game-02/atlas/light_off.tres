@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://b7bw7ec4b8ouv"]
+
+[ext_resource type="Texture2D" uid="uid://vxqn5b8fcivo" path="res://assets/game-02/atlas/monitor_light_off.tres" id="1_q2jra"]
+
+[resource]
+atlas = ExtResource("1_q2jra")
+region = Rect2(0, 0, 50, 52)

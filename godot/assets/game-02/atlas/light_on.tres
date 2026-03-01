@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://bc6t3prnx5546"]
+
+[ext_resource type="Texture2D" uid="uid://cf235vfbf1xd8" path="res://assets/game-02/atlas/monitor_light_on.tres" id="1_ymkag"]
+
+[resource]
+atlas = ExtResource("1_ymkag")
+region = Rect2(0, 0, 50, 52)

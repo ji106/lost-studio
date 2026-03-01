@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://ckuqh35f5ly42"]
+
+[ext_resource type="Script" uid="uid://c3mhds8wm072x" path="res://scripts/door.gd" id="1_mairw"]
+[ext_resource type="Texture2D" uid="uid://c0tr83jj43g5g" path="res://assets/game-02/atlas/door_close.tres" id="2_276s7"]
+[ext_resource type="Texture2D" uid="uid://b5m6w68bgfgpe" path="res://assets/game-02/atlas/door_open.tres" id="3_276s7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_evoc3"]
+size = Vector2(56, 79)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2iupy"]
+size = Vector2(66, 91)
+
+[node name="Door" type="StaticBody2D"]
+script = ExtResource("1_mairw")
+texture_closed = ExtResource("2_276s7")
+texture_open = ExtResource("3_276s7")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_276s7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_evoc3")
+
+[node name="ZonaInteraccion" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ZonaInteraccion"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_2iupy")
+
+[connection signal="body_entered" from="ZonaInteraccion" to="." method="_on_zona_interaccion_body_entered"]
+[connection signal="body_exited" from="ZonaInteraccion" to="." method="_on_zona_interaccion_body_exited"]

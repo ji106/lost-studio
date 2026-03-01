@@ -1,0 +1,215 @@
+[gd_scene load_steps=17 format=3 uid="uid://qqj2p7lav6iu"]
+
+[ext_resource type="Texture2D" uid="uid://d44hl3qm6atm" path="res://assets/ui/settings/settings-audio/btn_automatic.png" id="1_2kl1s"]
+[ext_resource type="Script" uid="uid://dcx05340yiird" path="res://scripts/barra_volumen_master.gd" id="1_insur"]
+[ext_resource type="Script" uid="uid://clr2wq2f76pxx" path="res://scripts/settings.gd" id="1_xwuht"]
+[ext_resource type="Texture2D" uid="uid://m0re4xmrdiy7" path="res://assets/ui/settings/settings-audio/btn_back.png" id="2_gegt6"]
+[ext_resource type="Texture2D" uid="uid://x2tjixrbwvmf" path="res://assets/ui/settings/settings-audio/volume_indicator.tres" id="2_xwuht"]
+[ext_resource type="Texture2D" uid="uid://cgjx5j75vkjpw" path="res://assets/ui/settings/settings-audio/btn_manual.png" id="3_insur"]
+[ext_resource type="Script" uid="uid://bk8lp7wigd8yd" path="res://scripts/barra_volumen_music.gd" id="4_if04v"]
+[ext_resource type="Texture2D" uid="uid://ck6jsxdftnkbm" path="res://assets/ui/settings/settings-audio/btn_save.png" id="4_xwuht"]
+[ext_resource type="Texture2D" uid="uid://dj6e26nfsbopc" path="res://assets/ui/settings/settings-audio/dialogues.png" id="5_if04v"]
+[ext_resource type="Texture2D" uid="uid://c8i6x5mqeo8jc" path="res://assets/ui/settings/settings-audio/general_volume.png" id="6_mjix3"]
+[ext_resource type="Texture2D" uid="uid://blgp78lb5v8ko" path="res://assets/ui/settings/settings-audio/music.png" id="7_jd5y7"]
+[ext_resource type="Texture2D" uid="uid://bd2vqy4yg852i" path="res://assets/ui/settings/settings-audio/panel.png" id="8_561cr"]
+[ext_resource type="Texture2D" uid="uid://dfbh2rgcsp26t" path="res://assets/ui/settings/settings-audio/panel_background.png" id="9_lkmof"]
+[ext_resource type="Texture2D" uid="uid://cockrdl7bt1jg" path="res://assets/ui/settings/settings-audio/subtitle.png" id="10_bppy2"]
+[ext_resource type="Texture2D" uid="uid://cgdyygb4bu5qb" path="res://assets/ui/settings/settings-audio/title.png" id="11_7e311"]
+[ext_resource type="Texture2D" uid="uid://bvhek7gwrulj0" path="res://assets/ui/settings/settings-audio/background.png" id="14_gegt6"]
+
+[node name="Settings" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_xwuht")
+
+[node name="save" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = -130.0
+offset_top = 254.0
+offset_right = 130.0
+offset_bottom = 304.0
+
+[node name="back" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = -668.0
+offset_top = 306.0
+offset_right = -508.0
+offset_bottom = 364.0
+
+[node name="BarraVolumenMaster" type="Control" parent="."]
+z_index = 1
+anchors_preset = 0
+offset_left = 50.0
+offset_top = -50.0
+offset_right = 250.0
+offset_bottom = -28.0
+script = ExtResource("1_insur")
+
+[node name="ContenedorCuadros" type="HBoxContainer" parent="BarraVolumenMaster"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="BarraVolumenMaster/ContenedorCuadros"]
+layout_mode = 2
+texture = ExtResource("2_xwuht")
+
+[node name="TextureRect2" type="TextureRect" parent="BarraVolumenMaster/ContenedorCuadros"]
+layout_mode = 2
+texture = ExtResource("2_xwuht")
+
+[node name="TextureRect3" type="TextureRect" parent="BarraVolumenMaster/ContenedorCuadros"]
+layout_mode = 2
+texture = ExtResource("2_xwuht")
+
+[node name="TextureRect4" type="TextureRect" parent="BarraVolumenMaster/ContenedorCuadros"]
+layout_mode = 2
+texture = ExtResource("2_xwuht")
+
+[node name="TextureRect5" type="TextureRect" parent="BarraVolumenMaster/ContenedorCuadros"]
+layout_mode = 2
+texture = ExtResource("2_xwuht")
+
+[node name="TextureRect6" type="TextureRect" parent="BarraVolumenMaster/ContenedorCuadros"]
+layout_mode = 2
+texture = ExtResource("2_xwuht")
+
+[node name="TextureRect7" type="TextureRect" parent="BarraVolumenMaster/ContenedorCuadros"]
+layout_mode = 2
+texture = ExtResource("2_xwuht")
+
+[node name="TextureRect8" type="TextureRect" parent="BarraVolumenMaster/ContenedorCuadros"]
+layout_mode = 2
+texture = ExtResource("2_xwuht")
+
+[node name="TextureRect9" type="TextureRect" parent="BarraVolumenMaster/ContenedorCuadros"]
+layout_mode = 2
+texture = ExtResource("2_xwuht")
+
+[node name="TextureRect10" type="TextureRect" parent="BarraVolumenMaster/ContenedorCuadros"]
+layout_mode = 2
+texture = ExtResource("2_xwuht")
+
+[node name="DetectorClics" type="Control" parent="BarraVolumenMaster"]
+anchors_preset = 0
+offset_right = 198.0
+offset_bottom = 22.0
+
+[node name="BarraVolumenMusic" type="Control" parent="."]
+z_index = 1
+anchors_preset = 0
+offset_left = -130.0
+offset_top = 26.0
+offset_right = 72.0
+offset_bottom = 48.0
+script = ExtResource("4_if04v")
+
+[node name="ContenedorCuadros" type="HBoxContainer" parent="BarraVolumenMusic"]
+layout_mode = 0
+offset_left = 4.0
+offset_right = 202.0
+offset_bottom = 22.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="BarraVolumenMusic/ContenedorCuadros"]
+layout_mode = 2
+texture = ExtResource("2_xwuht")
+
+[node name="TextureRect2" type="TextureRect" parent="BarraVolumenMusic/ContenedorCuadros"]
+layout_mode = 2
+texture = ExtResource("2_xwuht")
+
+[node name="TextureRect3" type="TextureRect" parent="BarraVolumenMusic/ContenedorCuadros"]
+layout_mode = 2
+texture = ExtResource("2_xwuht")
+
+[node name="TextureRect4" type="TextureRect" parent="BarraVolumenMusic/ContenedorCuadros"]
+layout_mode = 2
+texture = ExtResource("2_xwuht")
+
+[node name="TextureRect5" type="TextureRect" parent="BarraVolumenMusic/ContenedorCuadros"]
+layout_mode = 2
+texture = ExtResource("2_xwuht")
+
+[node name="TextureRect6" type="TextureRect" parent="BarraVolumenMusic/ContenedorCuadros"]
+layout_mode = 2
+texture = ExtResource("2_xwuht")
+
+[node name="TextureRect7" type="TextureRect" parent="BarraVolumenMusic/ContenedorCuadros"]
+layout_mode = 2
+texture = ExtResource("2_xwuht")
+
+[node name="TextureRect8" type="TextureRect" parent="BarraVolumenMusic/ContenedorCuadros"]
+layout_mode = 2
+texture = ExtResource("2_xwuht")
+
+[node name="TextureRect9" type="TextureRect" parent="BarraVolumenMusic/ContenedorCuadros"]
+layout_mode = 2
+texture = ExtResource("2_xwuht")
+
+[node name="TextureRect10" type="TextureRect" parent="BarraVolumenMusic/ContenedorCuadros"]
+layout_mode = 2
+texture = ExtResource("2_xwuht")
+
+[node name="DetectorClics" type="Control" parent="BarraVolumenMusic"]
+anchors_preset = 0
+offset_left = 4.0
+offset_right = 202.0
+offset_bottom = 22.0
+
+[node name="background" type="Node" parent="."]
+
+[node name="BtnAutomatic" type="Sprite2D" parent="background"]
+texture = ExtResource("1_2kl1s")
+
+[node name="BtnBack" type="Sprite2D" parent="background"]
+texture = ExtResource("2_gegt6")
+
+[node name="BtnManual" type="Sprite2D" parent="background"]
+z_index = 1
+texture = ExtResource("3_insur")
+
+[node name="BtnSave" type="Sprite2D" parent="background"]
+texture = ExtResource("4_xwuht")
+
+[node name="Dialogues" type="Sprite2D" parent="background"]
+z_index = 1
+texture = ExtResource("5_if04v")
+
+[node name="GeneralVolume" type="Sprite2D" parent="background"]
+z_index = 1
+texture = ExtResource("6_mjix3")
+
+[node name="Music" type="Sprite2D" parent="background"]
+z_index = 1
+texture = ExtResource("7_jd5y7")
+
+[node name="Panel" type="Sprite2D" parent="background"]
+texture = ExtResource("8_561cr")
+
+[node name="PanelBackground" type="Sprite2D" parent="background"]
+texture = ExtResource("9_lkmof")
+
+[node name="Subtitle" type="Sprite2D" parent="background"]
+texture = ExtResource("10_bppy2")
+
+[node name="Title" type="Sprite2D" parent="background"]
+texture = ExtResource("11_7e311")
+
+[node name="Background" type="Sprite2D" parent="background"]
+z_index = -1
+position = Vector2(1, 1)
+texture = ExtResource("14_gegt6")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.84, 0.844)

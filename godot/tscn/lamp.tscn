@@ -1,0 +1,40 @@
+[gd_scene load_steps=7 format=3 uid="uid://d11g14bi5x7p8"]
+
+[ext_resource type="Script" uid="uid://e0ia6wxb846a" path="res://scripts/lamp.gd" id="1_2amtm"]
+[ext_resource type="Texture2D" uid="uid://b7bw7ec4b8ouv" path="res://assets/game-02/atlas/light_off.tres" id="2_r8w6n"]
+[ext_resource type="Texture2D" uid="uid://bc6t3prnx5546" path="res://assets/game-02/atlas/light_on.tres" id="3_snq5c"]
+[ext_resource type="Texture2D" uid="uid://2jpdrqdxjx1b" path="res://assets/game-02/atlas/base.tres" id="4_r8w6n"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4051m"]
+size = Vector2(50, 38)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nwm6e"]
+size = Vector2(58, 46)
+
+[node name="Lamp" type="StaticBody2D"]
+script = ExtResource("1_2amtm")
+texture_off = ExtResource("2_r8w6n")
+texture_on = ExtResource("3_snq5c")
+
+[node name="BombillaSprite" type="Sprite2D" parent="."]
+z_index = 6
+position = Vector2(0, -19)
+texture = ExtResource("2_r8w6n")
+
+[node name="BaseSprite" type="Sprite2D" parent="."]
+position = Vector2(0, 26)
+texture = ExtResource("4_r8w6n")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 26)
+shape = SubResource("RectangleShape2D_4051m")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(0, -45)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 71)
+shape = SubResource("RectangleShape2D_nwm6e")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

@@ -1,0 +1,291 @@
+[gd_scene load_steps=24 format=3 uid="uid://bv2kdblu3bf7s"]
+
+[ext_resource type="Texture2D" uid="uid://con828xscm5e1" path="res://assets/game-02/bedside_table.png" id="1_da6uc"]
+[ext_resource type="Script" uid="uid://camjahtjjhxhi" path="res://scripts/level_02.gd" id="1_dwnbh"]
+[ext_resource type="Texture2D" uid="uid://bhh5mcioeomg" path="res://assets/game-02/biohazard_bin.png" id="2_dwnbh"]
+[ext_resource type="Texture2D" uid="uid://bbo5tk4lx26i3" path="res://assets/game-02/border.png" id="3_gdxul"]
+[ext_resource type="Texture2D" uid="uid://d4i3y2himw158" path="res://assets/game-02/chair.png" id="4_0uabv"]
+[ext_resource type="Texture2D" uid="uid://bm7740tlcva5b" path="res://assets/game-02/floor.png" id="7_ndjdw"]
+[ext_resource type="Texture2D" uid="uid://mvax2o255hsm" path="res://assets/game-02/flower.png" id="8_p1ijw"]
+[ext_resource type="Texture2D" uid="uid://by17vlk1ag7uv" path="res://assets/game-02/health_panel.png" id="9_bkep3"]
+[ext_resource type="Texture2D" uid="uid://b68povsrvmk1f" path="res://assets/game-02/infusion_stand.png" id="10_c1ajk"]
+[ext_resource type="Texture2D" uid="uid://b1bnv22o1mjh8" path="res://assets/game-02/iv_stand.png" id="11_jp15l"]
+[ext_resource type="Texture2D" uid="uid://cyu4w4mlyhgky" path="res://assets/game-02/medical_kit.png" id="12_t1pm2"]
+[ext_resource type="Texture2D" uid="uid://bu3scyfiv7p7v" path="res://assets/game-02/medicine_shelf.png" id="13_cr16s"]
+[ext_resource type="Texture2D" uid="uid://e5vru1r5nd38" path="res://assets/game-02/monitor.png" id="14_ih73j"]
+[ext_resource type="Texture2D" uid="uid://dxfrcu71bjd7o" path="res://assets/game-02/monitor_stand.png" id="18_io43g"]
+[ext_resource type="Texture2D" uid="uid://cqogjs8ehyyy" path="res://assets/game-02/rug.png" id="19_ajwyp"]
+[ext_resource type="Texture2D" uid="uid://dgo6i1tqjjiep" path="res://assets/game-02/storage_cabinet.png" id="20_duq0d"]
+[ext_resource type="Texture2D" uid="uid://un7ssjnbwtof" path="res://assets/game-02/wall.png" id="21_2tsg4"]
+[ext_resource type="Texture2D" uid="uid://dwm3c73bkkmwx" path="res://assets/game-02/wall_thermometer.png" id="22_1v7q6"]
+[ext_resource type="Texture2D" uid="uid://i5ltrvw1thwm" path="res://assets/game-02/waste_bin.png" id="23_n3w1c"]
+[ext_resource type="PackedScene" uid="uid://d11g14bi5x7p8" path="res://tscn/lamp.tscn" id="25_da6uc"]
+[ext_resource type="Texture2D" uid="uid://d3tsfist5mqkm" path="res://assets/game-02/bed.png" id="25_dhwy8"]
+[ext_resource type="PackedScene" uid="uid://ckuqh35f5ly42" path="res://tscn/door.tscn" id="25_dwnbh"]
+[ext_resource type="PackedScene" uid="uid://l8rglr0pslgo" path="res://tscn/player.tscn" id="26_dwnbh"]
+
+[node name="level-02" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_dwnbh")
+
+[node name="map" type="Node" parent="."]
+
+[node name="BedsideTable" type="Sprite2D" parent="map"]
+z_index = 1
+texture = ExtResource("1_da6uc")
+
+[node name="BiohazardBin" type="Sprite2D" parent="map"]
+z_index = 1
+texture = ExtResource("2_dwnbh")
+
+[node name="Border" type="Sprite2D" parent="map"]
+z_index = 1
+texture = ExtResource("3_gdxul")
+
+[node name="Chair" type="Sprite2D" parent="map"]
+z_index = 1
+texture = ExtResource("4_0uabv")
+
+[node name="Floor" type="Sprite2D" parent="map"]
+texture = ExtResource("7_ndjdw")
+
+[node name="Flower" type="Sprite2D" parent="map"]
+z_index = 1
+texture = ExtResource("8_p1ijw")
+
+[node name="HealthPanel" type="Sprite2D" parent="map"]
+z_index = 1
+texture = ExtResource("9_bkep3")
+
+[node name="InfusionStand" type="Sprite2D" parent="map"]
+z_index = 1
+texture = ExtResource("10_c1ajk")
+
+[node name="IvStand" type="Sprite2D" parent="map"]
+z_index = 1
+texture = ExtResource("11_jp15l")
+
+[node name="MedicalKit" type="Sprite2D" parent="map"]
+z_index = 1
+texture = ExtResource("12_t1pm2")
+
+[node name="MedicineShelf" type="Sprite2D" parent="map"]
+z_index = 1
+texture = ExtResource("13_cr16s")
+
+[node name="Monitor" type="Sprite2D" parent="map"]
+z_index = 2
+texture = ExtResource("14_ih73j")
+
+[node name="MonitorStand" type="Sprite2D" parent="map"]
+z_index = 1
+texture = ExtResource("18_io43g")
+
+[node name="Rug" type="Sprite2D" parent="map"]
+texture = ExtResource("19_ajwyp")
+
+[node name="StorageCabinet" type="Sprite2D" parent="map"]
+z_index = 1
+texture = ExtResource("20_duq0d")
+
+[node name="Wall" type="Sprite2D" parent="map"]
+texture = ExtResource("21_2tsg4")
+
+[node name="WallThermometer" type="Sprite2D" parent="map"]
+texture = ExtResource("22_1v7q6")
+
+[node name="WasteBin" type="Sprite2D" parent="map"]
+z_index = 1
+texture = ExtResource("23_n3w1c")
+
+[node name="Bed" type="Sprite2D" parent="map"]
+texture = ExtResource("25_dhwy8")
+
+[node name="Player" parent="." instance=ExtResource("26_dwnbh")]
+z_index = 4
+position = Vector2(-85, -147)
+
+[node name="Lamps" type="Node" parent="."]
+
+[node name="Lamp1" parent="Lamps" node_paths=PackedStringArray("neighbors") instance=ExtResource("25_da6uc")]
+z_index = 3
+position = Vector2(-276, -125)
+is_on = true
+neighbors = [NodePath("../Lamp2"), NodePath("../Lamp9")]
+
+[node name="Lamp2" parent="Lamps" node_paths=PackedStringArray("neighbors") instance=ExtResource("25_da6uc")]
+z_index = 3
+position = Vector2(-188, -125)
+is_on = true
+neighbors = [NodePath("../Lamp1"), NodePath("../Lamp3"), NodePath("../Lamp10")]
+
+[node name="Lamp3" parent="Lamps" node_paths=PackedStringArray("neighbors") instance=ExtResource("25_da6uc")]
+z_index = 3
+position = Vector2(-100, -125)
+is_on = true
+neighbors = [NodePath("../Lamp2"), NodePath("../Lamp4"), NodePath("../Lamp11")]
+
+[node name="Lamp4" parent="Lamps" node_paths=PackedStringArray("neighbors") instance=ExtResource("25_da6uc")]
+z_index = 3
+position = Vector2(-12, -125)
+neighbors = [NodePath("../Lamp5"), NodePath("../Lamp12"), NodePath("../Lamp3")]
+
+[node name="Lamp5" parent="Lamps" node_paths=PackedStringArray("neighbors") instance=ExtResource("25_da6uc")]
+z_index = 3
+position = Vector2(76, -125)
+is_on = true
+neighbors = [NodePath("../Lamp4"), NodePath("../Lamp13"), NodePath("../Lamp6")]
+
+[node name="Lamp6" parent="Lamps" node_paths=PackedStringArray("neighbors") instance=ExtResource("25_da6uc")]
+z_index = 3
+position = Vector2(164, -125)
+neighbors = [NodePath("../Lamp7"), NodePath("../Lamp14"), NodePath("../Lamp5")]
+
+[node name="Lamp7" parent="Lamps" node_paths=PackedStringArray("neighbors") instance=ExtResource("25_da6uc")]
+z_index = 3
+position = Vector2(252, -125)
+neighbors = [NodePath("../Lamp6"), NodePath("../Lamp8"), NodePath("../Lamp15")]
+
+[node name="Lamp8" parent="Lamps" node_paths=PackedStringArray("neighbors") instance=ExtResource("25_da6uc")]
+z_index = 3
+position = Vector2(340, -125)
+is_on = true
+neighbors = [NodePath("../Lamp7"), NodePath("../Lamp16")]
+
+[node name="Lamp9" parent="Lamps" node_paths=PackedStringArray("neighbors") instance=ExtResource("25_da6uc")]
+z_index = 3
+position = Vector2(-276, -25)
+is_on = true
+neighbors = [NodePath("../Lamp1"), NodePath("../Lamp10"), NodePath("../Lamp17")]
+
+[node name="Lamp10" parent="Lamps" node_paths=PackedStringArray("neighbors") instance=ExtResource("25_da6uc")]
+z_index = 3
+position = Vector2(-188, -25)
+neighbors = [NodePath("../Lamp2"), NodePath("../Lamp9"), NodePath("../Lamp11"), NodePath("../Lamp18")]
+
+[node name="Lamp11" parent="Lamps" node_paths=PackedStringArray("neighbors") instance=ExtResource("25_da6uc")]
+z_index = 3
+position = Vector2(-100, -25)
+neighbors = [NodePath("../Lamp3"), NodePath("../Lamp10"), NodePath("../Lamp12"), NodePath("../Lamp19")]
+
+[node name="Lamp12" parent="Lamps" node_paths=PackedStringArray("neighbors") instance=ExtResource("25_da6uc")]
+z_index = 3
+position = Vector2(-12, -25)
+is_on = true
+neighbors = [NodePath("../Lamp4"), NodePath("../Lamp11"), NodePath("../Lamp13"), NodePath("../Lamp20")]
+
+[node name="Lamp13" parent="Lamps" node_paths=PackedStringArray("neighbors") instance=ExtResource("25_da6uc")]
+z_index = 3
+position = Vector2(76, -25)
+neighbors = [NodePath("../Lamp5"), NodePath("../Lamp12"), NodePath("../Lamp14"), NodePath("../Lamp21")]
+
+[node name="Lamp14" parent="Lamps" node_paths=PackedStringArray("neighbors") instance=ExtResource("25_da6uc")]
+z_index = 3
+position = Vector2(164, -25)
+is_on = true
+neighbors = [NodePath("../Lamp6"), NodePath("../Lamp13"), NodePath("../Lamp15"), NodePath("../Lamp22")]
+
+[node name="Lamp15" parent="Lamps" node_paths=PackedStringArray("neighbors") instance=ExtResource("25_da6uc")]
+z_index = 3
+position = Vector2(252, -25)
+neighbors = [NodePath("../Lamp7"), NodePath("../Lamp14"), NodePath("../Lamp16"), NodePath("../Lamp23")]
+
+[node name="Lamp16" parent="Lamps" node_paths=PackedStringArray("neighbors") instance=ExtResource("25_da6uc")]
+z_index = 3
+position = Vector2(340, -25)
+is_on = true
+neighbors = [NodePath("../Lamp8"), NodePath("../Lamp15"), NodePath("../Lamp24")]
+
+[node name="Lamp17" parent="Lamps" node_paths=PackedStringArray("neighbors") instance=ExtResource("25_da6uc")]
+z_index = 3
+position = Vector2(-276, 75)
+is_on = true
+neighbors = [NodePath("../Lamp18"), NodePath("../Lamp9"), NodePath("../Lamp25")]
+
+[node name="Lamp18" parent="Lamps" node_paths=PackedStringArray("neighbors") instance=ExtResource("25_da6uc")]
+z_index = 3
+position = Vector2(-188, 75)
+neighbors = [NodePath("../Lamp17"), NodePath("../Lamp19"), NodePath("../Lamp10"), NodePath("../Lamp26")]
+
+[node name="Lamp19" parent="Lamps" node_paths=PackedStringArray("neighbors") instance=ExtResource("25_da6uc")]
+z_index = 3
+position = Vector2(-100, 75)
+is_on = true
+neighbors = [NodePath("../Lamp11"), NodePath("../Lamp18"), NodePath("../Lamp20"), NodePath("../Lamp27")]
+
+[node name="Lamp20" parent="Lamps" node_paths=PackedStringArray("neighbors") instance=ExtResource("25_da6uc")]
+z_index = 3
+position = Vector2(-12, 75)
+neighbors = [NodePath("../Lamp12"), NodePath("../Lamp19"), NodePath("../Lamp21"), NodePath("../Lamp28")]
+
+[node name="Lamp21" parent="Lamps" node_paths=PackedStringArray("neighbors") instance=ExtResource("25_da6uc")]
+z_index = 3
+position = Vector2(76, 75)
+neighbors = [NodePath("../Lamp13"), NodePath("../Lamp20"), NodePath("../Lamp22"), NodePath("../Lamp29")]
+
+[node name="Lamp22" parent="Lamps" node_paths=PackedStringArray("neighbors") instance=ExtResource("25_da6uc")]
+z_index = 3
+position = Vector2(164, 75)
+neighbors = [NodePath("../Lamp14"), NodePath("../Lamp21"), NodePath("../Lamp23"), NodePath("../Lamp30")]
+
+[node name="Lamp23" parent="Lamps" node_paths=PackedStringArray("neighbors") instance=ExtResource("25_da6uc")]
+z_index = 3
+position = Vector2(252, 75)
+neighbors = [NodePath("../Lamp15"), NodePath("../Lamp22"), NodePath("../Lamp24"), NodePath("../Lamp31")]
+
+[node name="Lamp24" parent="Lamps" node_paths=PackedStringArray("neighbors") instance=ExtResource("25_da6uc")]
+z_index = 3
+position = Vector2(340, 75)
+is_on = true
+neighbors = [NodePath("../Lamp16"), NodePath("../Lamp23"), NodePath("../Lamp32")]
+
+[node name="Lamp25" parent="Lamps" node_paths=PackedStringArray("neighbors") instance=ExtResource("25_da6uc")]
+z_index = 3
+position = Vector2(-276, 175)
+neighbors = [NodePath("../Lamp17"), NodePath("../Lamp26")]
+
+[node name="Lamp26" parent="Lamps" node_paths=PackedStringArray("neighbors") instance=ExtResource("25_da6uc")]
+z_index = 3
+position = Vector2(-188, 175)
+neighbors = [NodePath("../Lamp25"), NodePath("../Lamp27"), NodePath("../Lamp18")]
+
+[node name="Lamp27" parent="Lamps" node_paths=PackedStringArray("neighbors") instance=ExtResource("25_da6uc")]
+z_index = 3
+position = Vector2(-100, 175)
+neighbors = [NodePath("../Lamp19"), NodePath("../Lamp26"), NodePath("../Lamp28")]
+
+[node name="Lamp28" parent="Lamps" node_paths=PackedStringArray("neighbors") instance=ExtResource("25_da6uc")]
+z_index = 3
+position = Vector2(-12, 175)
+neighbors = [NodePath("../Lamp20"), NodePath("../Lamp27"), NodePath("../Lamp29")]
+
+[node name="Lamp29" parent="Lamps" node_paths=PackedStringArray("neighbors") instance=ExtResource("25_da6uc")]
+z_index = 3
+position = Vector2(76, 175)
+neighbors = [NodePath("../Lamp28"), NodePath("../Lamp21"), NodePath("../Lamp30")]
+
+[node name="Lamp30" parent="Lamps" node_paths=PackedStringArray("neighbors") instance=ExtResource("25_da6uc")]
+z_index = 3
+position = Vector2(164, 175)
+neighbors = [NodePath("../Lamp22"), NodePath("../Lamp29"), NodePath("../Lamp31")]
+
+[node name="Lamp31" parent="Lamps" node_paths=PackedStringArray("neighbors") instance=ExtResource("25_da6uc")]
+z_index = 3
+position = Vector2(252, 175)
+neighbors = [NodePath("../Lamp23"), NodePath("../Lamp30"), NodePath("../Lamp32")]
+
+[node name="Lamp32" parent="Lamps" node_paths=PackedStringArray("neighbors") instance=ExtResource("25_da6uc")]
+z_index = 3
+position = Vector2(340, 175)
+is_on = true
+neighbors = [NodePath("../Lamp24"), NodePath("../Lamp31")]
+
+[node name="limits" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="limits"]
+build_mode = 1
+polygon = PackedVector2Array(-441, -195, -441, -120, -441, -121, -401, -121, -401, -69, -365, -69, -365, -15, -401, -15, -401, 11, -441, 11, -441, 259, -300, 259, -300, 291, -236, 291, -236, 259, 441, 259, 441, -153, 417, -153, 417, -181, 289, -181, 289, -185, 236, -185, 236, -195, 64, -195, -67, -195, -67, -181, -75, -181, -75, -187, -105, -187, -105, -181, -113, -181, -113, -195, -153, -195, -153, -179, -187, -179, -187, -183, -241, -183, -241, -147, -283, -147, -283, -183, -333, -183, -333, -195, -365, -195, -365, -179, -399, -179, -399, -195)
+
+[node name="Door" parent="." instance=ExtResource("25_dwnbh")]
+z_index = 2
+position = Vector2(109, -232)

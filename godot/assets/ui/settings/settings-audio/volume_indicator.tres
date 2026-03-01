@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://x2tjixrbwvmf"]
+
+[ext_resource type="Texture2D" uid="uid://dkmoqrm10cif1" path="res://assets/ui/settings/settings-audio/volume_indicator.png" id="1_0tqgr"]
+
+[resource]
+atlas = ExtResource("1_0tqgr")
+region = Rect2(738, 334, 18, 22)

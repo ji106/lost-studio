@@ -14,6 +14,10 @@ config/name="TFG"
 run/main_scene="uid://bptm8bweg1odg"
 config/features=PackedStringArray("4.5", "Forward Plus")
 
+[audio]
+
+buses/default_bus_layout="res://sounds/default_bus_layout.tres"
+
 [autoload]
 
 TransitionScreen="*res://tscn/transition_screen.tscn"
