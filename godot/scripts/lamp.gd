@@ -6,22 +6,27 @@ signal lamp_changed
 # --- CONFIGURACIÓN VISUAL ---
 @export var texture_off: Texture2D  # Arrastra imagen gris
 @export var texture_on: Texture2D   # Arrastra imagen amarilla
-@export var is_on: bool = false     # Estado inicial
+@export var is_on: bool = false      # Estado inicial
 
 # --- VECINOS ---
 # Arrastra aquí las otras lámparas que se deben encender/apagar junto a esta
 @export var neighbors: Array[Node2D] 
 
-# Asegúrate de que tu nodo hijo se llame "BombillaSprite" o cambia esto por el nombre correcto
+# Asegúrate de que tu nodo hijo se llame "BombillaSprite"
 @onready var sprite = $BombillaSprite
 var player_near: bool = false
 
 func _ready():
 	add_to_group("lamparas") # Importante para que el nivel las encuentre
+	
+	# --- CARGAR ESTADO GUARDADO ---
+	# Comprobamos si el nombre de este nodo está en la lista de luces encendidas
+	if name in Global.game_data["luces_encendidas_level2"]:
+		is_on = true
+	
 	update_visuals()
 
-# --- AQUÍ ESTÁ EL ARREGLO ---
-# Hemos cambiado "delta" por "_delta" para que Godot sepa que no la usamos
+# --- DETECCIÓN DE INTERACCIÓN ---
 func _process(_delta):
 	# Detectar la tecla E cuando estás cerca
 	if player_near and Input.is_action_just_pressed("interactuar"):
@@ -39,10 +44,18 @@ func activate_mechanic():
 	# 3. Avisa al nivel para comprobar victoria
 	emit_signal("lamp_changed")
 
-# Función que solo cambia el estado (True/False)
+# Función que cambia el estado y guarda el progreso
 func toggle():
 	is_on = !is_on
 	update_visuals()
+	
+	# --- GUARDAR ESTADO ---
+	# Registramos si esta luz específica está encendida o apagada en el Global
+	Global.registrar_cambio_luz(name, is_on)
+	
+	# Reproducir sonido si existe el nodo
+	if has_node("SonidoClick"):
+		$SonidoClick.play()
 
 func update_visuals():
 	if is_on and texture_on:

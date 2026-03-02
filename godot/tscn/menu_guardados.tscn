@@ -14,7 +14,11 @@
 
 [node name="Menu Guardados" type="Control"]
 layout_mode = 3
-anchors_preset = 0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_28n63")
 img_titulo_new_game = ExtResource("11_n5f2w")
 img_titulo_load_game = ExtResource("5_c83qb")
@@ -24,22 +28,46 @@ img_vacio_2 = ExtResource("7_6qa3f")
 img_ocupado_2 = ExtResource("5_n5f2w")
 img_vacio_3 = ExtResource("8_c83qb")
 img_ocupado_3 = ExtResource("7_r7yas")
+metadata/_edit_use_anchors_ = true
 
 [node name="screen" type="Node" parent="."]
 
-[node name="Background" type="Sprite2D" parent="screen"]
+[node name="Background" type="TextureRect" parent="screen"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 224.0
+offset_bottom = 120.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
 texture = ExtResource("1_gmbqe")
 
-[node name="Title" type="Sprite2D" parent="screen"]
+[node name="Title" type="TextureRect" parent="screen"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -688.0
+offset_right = 688.0
+offset_bottom = 768.0
+grow_horizontal = 2
+mouse_filter = 2
 texture = ExtResource("5_c83qb")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 z_index = 2
-layout_mode = 0
-offset_left = -229.0
-offset_top = -127.0
-offset_right = 230.0
-offset_bottom = 174.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.342
+anchor_right = 0.5
+anchor_bottom = 0.342
+offset_left = -229.5
+offset_top = -0.115997314
+offset_right = 229.5
+offset_bottom = 300.884
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_constants/separation = 17
 
 [node name="Slot1" type="TextureButton" parent="VBoxContainer"]
@@ -56,15 +84,19 @@ texture_normal = ExtResource("8_c83qb")
 
 [node name="BtnBack" type="TextureButton" parent="."]
 z_index = 2
-layout_mode = 0
-offset_left = -130.0
-offset_top = 263.0
-offset_right = 129.0
-offset_bottom = 320.0
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -129.5
+offset_top = -78.0
+offset_right = 129.5
+offset_bottom = -21.0
+grow_horizontal = 2
+grow_vertical = 0
 texture_normal = ExtResource("7_28n63")
-
-[node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(0.84, 0.844)
 
 [connection signal="pressed" from="VBoxContainer/Slot1" to="." method="_on_slot_1_pressed"]
 [connection signal="pressed" from="VBoxContainer/Slot2" to="." method="_on_slot_2_pressed"]

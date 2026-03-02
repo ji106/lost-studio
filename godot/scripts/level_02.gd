@@ -4,12 +4,17 @@ extends Node2D
 @export var puerta_recompensa: Node2D 
 
 func _ready():
-	# IMPORTANTE: Usamos el grupo "lamparas" porque tus lámparas están dentro de "map"
-	# Si usáramos get_children() aquí, no encontraría nada porque "map" las oculta.
+	# Inicia la música del nivel 2
+	if has_node("/root/MusicManager"):
+		MusicManager.play_music("musica1.mp3")
+
+	# CONEXIÓN DE LÁMPARAS
+	# Buscamos todas las lámparas del grupo "lamparas"
 	var lamps = get_tree().get_nodes_in_group("lamparas")
 	
 	for lamp in lamps:
 		# Conectamos la señal que definimos en lamp.gd
+		# Esto hará que cada vez que una cambie, revisemos si ganamos
 		if not lamp.lamp_changed.is_connected(comprobar_victoria):
 			lamp.lamp_changed.connect(comprobar_victoria)
 
@@ -31,7 +36,7 @@ func comprobar_victoria():
 		# Desactivamos las lámparas para que no se puedan volver a tocar
 		desactivar_lamparas()
 		
-		# Abrimos la puerta
+		# Abrimos la puerta usando su función 'abrir_puerta'
 		if puerta_recompensa and puerta_recompensa.has_method("abrir_puerta"):
 			puerta_recompensa.abrir_puerta()
 		else:

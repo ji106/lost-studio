@@ -22,6 +22,7 @@ buses/default_bus_layout="res://sounds/default_bus_layout.tres"
 
 TransitionScreen="*res://tscn/transition_screen.tscn"
 Global="*res://scripts/global.gd"
+MusicManager="*res://scripts/MusicManager.gd"
 
 [gui]
 

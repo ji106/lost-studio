@@ -19,43 +19,219 @@
 
 [node name="Settings" type="Control"]
 layout_mode = 3
-anchors_preset = 0
-script = ExtResource("1_xwuht")
-
-[node name="save" type="Button" parent="."]
-modulate = Color(1, 1, 1, 0)
-layout_mode = 0
-offset_left = -130.0
-offset_top = 254.0
-offset_right = 130.0
-offset_bottom = 304.0
-
-[node name="back" type="Button" parent="."]
-modulate = Color(1, 1, 1, 0)
-layout_mode = 0
-offset_left = -668.0
-offset_top = 306.0
-offset_right = -508.0
-offset_bottom = 364.0
-
-[node name="BarraVolumenMaster" type="Control" parent="."]
-z_index = 1
-anchors_preset = 0
-offset_left = 50.0
-offset_top = -50.0
-offset_right = 250.0
-offset_bottom = -28.0
-script = ExtResource("1_insur")
-
-[node name="ContenedorCuadros" type="HBoxContainer" parent="BarraVolumenMaster"]
-layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 2
+script = ExtResource("1_xwuht")
+
+[node name="BtnAutomatic" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -688.0
+offset_top = -60.0
+offset_right = 688.0
+offset_bottom = 708.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_2kl1s")
+
+[node name="BtnBack" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -576.0
+offset_top = -108.0
+offset_right = 800.0
+offset_bottom = 660.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_gegt6")
+
+[node name="BtnManual" type="TextureRect" parent="."]
+z_index = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -688.0
+offset_top = -60.0
+offset_right = 688.0
+offset_bottom = 708.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_insur")
+
+[node name="BtnSave" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -688.0
+offset_top = -60.0
+offset_right = 688.0
+offset_bottom = 708.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_xwuht")
+
+[node name="Dialogues" type="TextureRect" parent="."]
+z_index = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -688.0
+offset_top = -60.0
+offset_right = 688.0
+offset_bottom = 708.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_if04v")
+
+[node name="GeneralVolume" type="TextureRect" parent="."]
+z_index = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -688.0
+offset_top = -60.0
+offset_right = 688.0
+offset_bottom = 708.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_mjix3")
+
+[node name="Music" type="TextureRect" parent="."]
+z_index = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -688.0
+offset_top = -60.0
+offset_right = 688.0
+offset_bottom = 708.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_jd5y7")
+
+[node name="Panel" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -688.0
+offset_top = -60.0
+offset_right = 688.0
+offset_bottom = 708.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_561cr")
+
+[node name="PanelBackground" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -688.0
+offset_top = -60.0
+offset_right = 688.0
+offset_bottom = 708.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("9_lkmof")
+
+[node name="Subtitle" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -688.0
+offset_top = -60.0
+offset_right = 688.0
+offset_bottom = 708.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("10_bppy2")
+
+[node name="Title" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -688.0
+offset_top = -39.0
+offset_right = 688.0
+offset_bottom = 729.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("11_7e311")
+
+[node name="Background" type="TextureRect" parent="."]
+z_index = -1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -1123.0
+offset_top = -701.0
+offset_right = 1577.0
+offset_bottom = 1125.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_gegt6")
+
+[node name="save" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -130.0
+offset_top = 578.0
+offset_right = 130.0
+offset_bottom = 628.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="back" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -556.0
+offset_top = 582.0
+offset_right = -396.0
+offset_bottom = 640.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BarraVolumenMaster" type="Control" parent="."]
+z_index = 1
+layout_mode = 1
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 50.0
+offset_top = 274.0
+offset_right = 50.0
+offset_bottom = 274.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_insur")
 metadata/_edit_use_anchors_ = true
+
+[node name="ContenedorCuadros" type="HBoxContainer" parent="BarraVolumenMaster"]
+layout_mode = 1
+offset_right = 200.0
+offset_bottom = 22.0
+theme_override_constants/separation = 2
 
 [node name="TextureRect" type="TextureRect" parent="BarraVolumenMaster/ContenedorCuadros"]
 layout_mode = 2
@@ -104,22 +280,23 @@ offset_bottom = 22.0
 
 [node name="BarraVolumenMusic" type="Control" parent="."]
 z_index = 1
-anchors_preset = 0
+layout_mode = 1
+anchor_left = 0.5
+anchor_right = 0.5
 offset_left = -130.0
-offset_top = 26.0
-offset_right = 72.0
-offset_bottom = 48.0
+offset_top = 350.0
+offset_right = -130.0
+offset_bottom = 350.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("4_if04v")
 
 [node name="ContenedorCuadros" type="HBoxContainer" parent="BarraVolumenMusic"]
-layout_mode = 0
+layout_mode = 1
 offset_left = 4.0
 offset_right = 202.0
 offset_bottom = 22.0
-grow_horizontal = 2
-grow_vertical = 2
 theme_override_constants/separation = 2
-metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect" type="TextureRect" parent="BarraVolumenMusic/ContenedorCuadros"]
 layout_mode = 2
@@ -166,50 +343,3 @@ anchors_preset = 0
 offset_left = 4.0
 offset_right = 202.0
 offset_bottom = 22.0
-
-[node name="background" type="Node" parent="."]
-
-[node name="BtnAutomatic" type="Sprite2D" parent="background"]
-texture = ExtResource("1_2kl1s")
-
-[node name="BtnBack" type="Sprite2D" parent="background"]
-texture = ExtResource("2_gegt6")
-
-[node name="BtnManual" type="Sprite2D" parent="background"]
-z_index = 1
-texture = ExtResource("3_insur")
-
-[node name="BtnSave" type="Sprite2D" parent="background"]
-texture = ExtResource("4_xwuht")
-
-[node name="Dialogues" type="Sprite2D" parent="background"]
-z_index = 1
-texture = ExtResource("5_if04v")
-
-[node name="GeneralVolume" type="Sprite2D" parent="background"]
-z_index = 1
-texture = ExtResource("6_mjix3")
-
-[node name="Music" type="Sprite2D" parent="background"]
-z_index = 1
-texture = ExtResource("7_jd5y7")
-
-[node name="Panel" type="Sprite2D" parent="background"]
-texture = ExtResource("8_561cr")
-
-[node name="PanelBackground" type="Sprite2D" parent="background"]
-texture = ExtResource("9_lkmof")
-
-[node name="Subtitle" type="Sprite2D" parent="background"]
-texture = ExtResource("10_bppy2")
-
-[node name="Title" type="Sprite2D" parent="background"]
-texture = ExtResource("11_7e311")
-
-[node name="Background" type="Sprite2D" parent="background"]
-z_index = -1
-position = Vector2(1, 1)
-texture = ExtResource("14_gegt6")
-
-[node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(0.84, 0.844)

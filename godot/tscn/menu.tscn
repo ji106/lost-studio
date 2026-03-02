@@ -9,29 +9,53 @@
 
 [node name="menu" type="Control"]
 layout_mode = 3
-anchors_preset = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_ku4py")
+metadata/_edit_use_anchors_ = true
 
-[node name="screen" type="Node" parent="."]
-
-[node name="Background" type="Sprite2D" parent="screen"]
-position = Vector2(-2, -3)
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -112.0
+offset_top = -60.0
+offset_right = 1206.3274
+offset_bottom = 759.0464
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.8343023, 0.8411458)
 texture = ExtResource("2_ku4py")
 
-[node name="Title" type="Sprite2D" parent="screen"]
-position = Vector2(3, 0)
+[node name="Title" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -702.62024
+offset_right = 982.62
+offset_bottom = 970.10516
+grow_horizontal = 2
+scale = Vector2(0.8343023, 0.8411459)
 texture = ExtResource("6_sfc8j")
-
-[node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(0.84, 0.844)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 z_index = 2
-layout_mode = 0
-offset_left = -131.0
-offset_top = -47.0
-offset_right = 128.0
-offset_bottom = 158.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -133.5
+offset_top = -19.5
+offset_right = 125.5
+offset_bottom = 185.5
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_constants/separation = 17
 
 [node name="BtnNewGame" type="TextureButton" parent="VBoxContainer"]

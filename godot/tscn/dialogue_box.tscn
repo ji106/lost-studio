@@ -1,0 +1,75 @@
+[gd_scene load_steps=4 format=3 uid="uid://cq0ul0pprl5mo"]
+
+[ext_resource type="Script" uid="uid://bfvd0v4wnfl5a" path="res://scripts/dialogue_box.gd" id="1_8vsv6"]
+[ext_resource type="Texture2D" uid="uid://d2dgja3lbpken" path="res://assets/ui/dialogue/base.png" id="2_uxlbo"]
+[ext_resource type="Texture2D" uid="uid://dijyetmo81rwm" path="res://assets/ui/dialogue/portrait_01.png" id="4_v06yr"]
+
+[node name="DialogueBox" type="CanvasLayer"]
+script = ExtResource("1_8vsv6")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel" type="Panel" parent="Control"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.8888889
+anchor_right = 0.5
+anchor_bottom = 0.8888889
+offset_left = -179.0
+offset_top = -102.0
+offset_right = 179.0
+grow_horizontal = 2
+grow_vertical = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="Base" type="Sprite2D" parent="Control/Panel"]
+position = Vector2(179, -13)
+texture = ExtResource("2_uxlbo")
+
+[node name="Texto" type="RichTextLabel" parent="Control/Panel"]
+layout_mode = 0
+offset_left = 88.0
+offset_top = 36.0
+offset_right = 350.0
+offset_bottom = 76.0
+theme_override_font_sizes/normal_font_size = 8
+metadata/_edit_use_anchors_ = true
+
+[node name="Nombre" type="Label" parent="Control/Panel"]
+layout_mode = 0
+offset_left = 87.0
+offset_top = 7.0
+offset_right = 123.0
+offset_bottom = 17.0
+theme_override_font_sizes/font_size = 8
+text = "Trevor"
+metadata/_edit_use_anchors_ = true
+
+[node name="Retrato" type="TextureRect" parent="Control/Panel"]
+layout_mode = 0
+offset_left = -42.0
+offset_top = -202.0
+offset_right = 400.0
+offset_bottom = 176.0
+texture = ExtResource("4_v06yr")
+metadata/_edit_use_anchors_ = true
+
+[node name="BotonSkip" type="Button" parent="Control/Panel"]
+layout_mode = 0
+offset_left = 322.0
+offset_top = 78.0
+offset_right = 352.0
+offset_bottom = 96.0
+theme_override_font_sizes/font_size = 8
+text = "SKIP
+"
+metadata/_edit_use_anchors_ = true

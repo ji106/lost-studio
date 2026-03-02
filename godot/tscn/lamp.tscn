@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://d11g14bi5x7p8"]
+[gd_scene load_steps=8 format=3 uid="uid://d11g14bi5x7p8"]
 
 [ext_resource type="Script" uid="uid://e0ia6wxb846a" path="res://scripts/lamp.gd" id="1_2amtm"]
 [ext_resource type="Texture2D" uid="uid://b7bw7ec4b8ouv" path="res://assets/game-02/atlas/light_off.tres" id="2_r8w6n"]
 [ext_resource type="Texture2D" uid="uid://bc6t3prnx5546" path="res://assets/game-02/atlas/light_on.tres" id="3_snq5c"]
 [ext_resource type="Texture2D" uid="uid://2jpdrqdxjx1b" path="res://assets/game-02/atlas/base.tres" id="4_r8w6n"]
+[ext_resource type="AudioStream" uid="uid://drlu7gcj7jbrg" path="res://sounds/interruptor.mp3" id="5_snq5c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4051m"]
 size = Vector2(50, 38)
@@ -35,6 +36,9 @@ position = Vector2(0, -45)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0, 71)
 shape = SubResource("RectangleShape2D_nwm6e")
+
+[node name="SonidoClick" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_snq5c")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

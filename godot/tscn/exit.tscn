@@ -1,9 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://dvb65soh1j300"]
+[gd_scene load_steps=16 format=3 uid="uid://dvb65soh1j300"]
 
+[ext_resource type="Script" uid="uid://bnsn8151ge1cj" path="res://scripts/exit.gd" id="1_5mkle"]
 [ext_resource type="Texture2D" uid="uid://dksq2ow0281yj" path="res://assets/train-station-exit/background.png" id="2_3a1lu"]
 [ext_resource type="Texture2D" uid="uid://h2xexr1r5uwa" path="res://assets/train-station-exit/border.png" id="3_jp1c7"]
 [ext_resource type="Texture2D" uid="uid://4y7f482xjoni" path="res://assets/train-station-exit/elevator_down_01.png" id="4_t1e13"]
-[ext_resource type="Texture2D" uid="uid://di4xxgvum3hxn" path="res://assets/train-station-exit/elevator_up_01.png" id="5_or5sd"]
 [ext_resource type="Texture2D" uid="uid://dd1viirmovsxu" path="res://assets/train-station-exit/floor.png" id="6_pegxy"]
 [ext_resource type="Texture2D" uid="uid://3iwsbc537tgh" path="res://assets/train-station-exit/props.png" id="7_e6cp8"]
 [ext_resource type="Texture2D" uid="uid://chjxtdgoajp6i" path="res://assets/train-station-exit/wall.png" id="8_6epy1"]
@@ -11,11 +11,15 @@
 [ext_resource type="Texture2D" uid="uid://g6lem43dp5tx" path="res://assets/train-station-map/escalator_01.png" id="10_el10v"]
 [ext_resource type="Texture2D" uid="uid://c030vsmoduo32" path="res://assets/train-station-map/train_01.png" id="10_wv6xg"]
 [ext_resource type="PackedScene" uid="uid://l8rglr0pslgo" path="res://tscn/player.tscn" id="11_el10v"]
+[ext_resource type="PackedScene" uid="uid://cs7aqukrh1uu8" path="res://tscn/elevator.tscn" id="12_6bhat"]
 [ext_resource type="PackedScene" uid="uid://bieb007mfxyfl" path="res://tscn/menu_rapido.tscn" id="12_laxcc"]
+[ext_resource type="PackedScene" uid="uid://cq0ul0pprl5mo" path="res://tscn/dialogue_box.tscn" id="14_3vtyg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5mkle"]
+size = Vector2(347, 36)
 
 [node name="TrainExit" type="Node2D"]
-
-[node name="Camera2D" type="Camera2D" parent="."]
+script = ExtResource("1_5mkle")
 
 [node name="limits" type="StaticBody2D" parent="."]
 
@@ -48,10 +52,6 @@ texture = ExtResource("3_jp1c7")
 z_index = 5
 texture = ExtResource("4_t1e13")
 
-[node name="ElevatorUp" type="Sprite2D" parent="map"]
-z_index = 5
-texture = ExtResource("5_or5sd")
-
 [node name="Floor" type="Sprite2D" parent="map"]
 z_index = 1
 texture = ExtResource("6_pegxy")
@@ -65,11 +65,11 @@ z_index = 4
 texture = ExtResource("8_6epy1")
 
 [node name="EscalatorWall" type="Sprite2D" parent="map"]
-position = Vector2(288, -259.5)
+position = Vector2(288, -244.5)
 texture = ExtResource("9_wv6xg")
 
 [node name="Escalator" type="Sprite2D" parent="map"]
-position = Vector2(288, -259.5)
+position = Vector2(288, -244.5)
 texture = ExtResource("10_el10v")
 
 [node name="Train" type="Sprite2D" parent="map"]
@@ -82,3 +82,19 @@ z_index = 6
 position = Vector2(60, 131)
 
 [node name="MenuPausa" parent="." instance=ExtResource("12_laxcc")]
+
+[node name="Elevator" parent="." instance=ExtResource("12_6bhat")]
+z_index = 5
+position = Vector2(-197, -175)
+
+[node name="DialogueBox" parent="." instance=ExtResource("14_3vtyg")]
+
+[node name="AreaEscaleras" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaEscaleras"]
+z_index = 5
+position = Vector2(232.5, -120)
+shape = SubResource("RectangleShape2D_5mkle")
+
+[connection signal="body_entered" from="AreaEscaleras" to="." method="_on_area_escaleras_body_entered"]
+[connection signal="body_exited" from="AreaEscaleras" to="." method="_on_area_escaleras_body_exited"]

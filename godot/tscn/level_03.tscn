@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://6vyo1hug3pud"]
+[gd_scene load_steps=26 format=3 uid="uid://6vyo1hug3pud"]
 
 [ext_resource type="PackedScene" uid="uid://l8rglr0pslgo" path="res://tscn/player.tscn" id="1_8cymj"]
 [ext_resource type="Script" uid="uid://b4imd2apjpbpn" path="res://scripts/level_03.gd" id="1_qspbx"]
@@ -19,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://cuxudxcsxvf1x" path="res://assets/game-01/wall.png" id="17_outuj"]
 [ext_resource type="Texture2D" uid="uid://76l8ebvofxep" path="res://assets/game-01/interactive/note/view/note.png" id="19_a1nhg"]
 [ext_resource type="PackedScene" uid="uid://bgcibo32mb7op" path="res://tscn/mobile.tscn" id="20_le761"]
+[ext_resource type="PackedScene" uid="uid://bieb007mfxyfl" path="res://tscn/menu_rapido.tscn" id="21_rfx57"]
 [ext_resource type="PackedScene" uid="uid://dplvaxnoxrmym" path="res://tscn/keypad.tscn" id="26_x88xk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x88xk"]
@@ -30,11 +31,15 @@ size = Vector2(26, 62)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a1nhg"]
 size = Vector2(22, 45)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rfx57"]
+size = Vector2(48, 81)
+
 [node name="level-03" type="Node2D"]
 script = ExtResource("1_qspbx")
 
 [node name="Player" parent="." instance=ExtResource("1_8cymj")]
 z_index = 2
+position = Vector2(-36, 137)
 
 [node name="limits" type="StaticBody2D" parent="."]
 
@@ -175,9 +180,19 @@ offset_right = -571.0
 offset_bottom = -320.0
 metadata/_edit_use_anchors_ = true
 
+[node name="PuertaSalida" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PuertaSalida"]
+position = Vector2(-32, -115.5)
+shape = SubResource("RectangleShape2D_rfx57")
+
+[node name="MenuPausa" parent="." instance=ExtResource("21_rfx57")]
+
 [connection signal="body_entered" from="ZonaKeypad" to="." method="_on_zona_keypad_body_entered"]
 [connection signal="body_exited" from="ZonaKeypad" to="." method="_on_zona_keypad_body_exited"]
 [connection signal="body_entered" from="ZonaEstanteria" to="." method="_on_zona_estanteria_body_entered"]
 [connection signal="body_exited" from="ZonaEstanteria" to="." method="_on_zona_estanteria_body_exited"]
 [connection signal="body_entered" from="ZonaMesa" to="." method="_on_zona_mesa_body_entered"]
 [connection signal="body_exited" from="ZonaMesa" to="." method="_on_zona_mesa_body_exited"]
+[connection signal="body_entered" from="PuertaSalida" to="." method="_on_puerta_salida_body_entered"]
+[connection signal="body_exited" from="PuertaSalida" to="." method="_on_puerta_salida_body_exited"]

@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://cmhl50y6lun85"]
+
+[ext_resource type="Script" uid="uid://q8kto4nxqlx8" path="res://scripts/intro.gd" id="1_2kdw4"]
+[ext_resource type="PackedScene" uid="uid://cq0ul0pprl5mo" path="res://tscn/dialogue_box.tscn" id="2_tm7cc"]
+
+[node name="intro" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2kdw4")
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 4
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="DialogueBox" parent="." instance=ExtResource("2_tm7cc")]

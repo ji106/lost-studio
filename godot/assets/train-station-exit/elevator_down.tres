@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://bdupfcaghurbl"]
+
+[ext_resource type="Texture2D" uid="uid://4y7f482xjoni" path="res://assets/train-station-exit/elevator_down_01.png" id="1_r3dms"]
+
+[resource]
+atlas = ExtResource("1_r3dms")
+region = Rect2(99, 87, 105, 111)

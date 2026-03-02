@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dsgxhejv8e110"
+path="res://.godot/imported/train (mp3cut.net).mp3-f5b83cd8f43d4ff6dd0fe7ce61e9eed2.mp3str"
+
+[deps]
+
+source_file="res://sounds/train (mp3cut.net).mp3"
+dest_files=["res://.godot/imported/train (mp3cut.net).mp3-f5b83cd8f43d4ff6dd0fe7ce61e9eed2.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

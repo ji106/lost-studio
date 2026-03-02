@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bieb007mfxyfl"]
+[gd_scene load_steps=3 format=3 uid="uid://bieb007mfxyfl"]
 
-[ext_resource type="Script" uid="uid://cu1lbtw254yxh" path="res://Scripts/menu_rapido.gd" id="1_8vs58"]
+[ext_resource type="Script" uid="uid://cu1lbtw254yxh" path="res://scripts/menu_rapido.gd" id="1_8vs58"]
+[ext_resource type="PackedScene" uid="uid://qqj2p7lav6iu" path="res://tscn/settings.tscn" id="2_ykl64"]
 
 [node name="MenuPausa" type="CanvasLayer"]
 process_mode = 3
@@ -31,17 +32,31 @@ grow_vertical = 2
 [node name="BotonReanudar" type="Button" parent="ColorRect/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 26
-text = "Reanudar"
+text = "Continue"
 
 [node name="BotonOpciones" type="Button" parent="ColorRect/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 26
-text = "Opciones"
+text = "Settings"
 
 [node name="BotonMenuGuardar" type="Button" parent="ColorRect/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 26
-text = "Guardar y Salir"
+text = "Save & Exit"
+
+[node name="Settings" parent="." instance=ExtResource("2_ykl64")]
+visible = false
+anchors_preset = 15
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = 3.0
+offset_right = 226.0
+offset_bottom = 121.0
+scale = Vector2(0.836, 0.84)
 
 [connection signal="pressed" from="ColorRect/VBoxContainer/BotonReanudar" to="." method="_on_boton_reanudar_pressed"]
+[connection signal="pressed" from="ColorRect/VBoxContainer/BotonOpciones" to="." method="_on_boton_opciones_pressed"]
 [connection signal="pressed" from="ColorRect/VBoxContainer/BotonMenuGuardar" to="." method="_on_boton_menu_guarda_pressed"]

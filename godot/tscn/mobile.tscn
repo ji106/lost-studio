@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://bgcibo32mb7op"]
+[gd_scene load_steps=33 format=3 uid="uid://bgcibo32mb7op"]
 
 [ext_resource type="Script" uid="uid://cqd62ds32agbf" path="res://scripts/mobile.gd" id="1_kndtj"]
 [ext_resource type="Texture2D" uid="uid://ip4o1tl7mig" path="res://assets/game-01/interactive/mobile/apps.png" id="8_404sd"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://ch4kjkumr4ebq" path="res://assets/game-01/interactive/mobile/atlas/mobile_btn_4.tres" id="23_iinmw"]
 [ext_resource type="Texture2D" uid="uid://cwxxkxhubkret" path="res://assets/game-01/interactive/mobile/atlas2/btn_home.tres" id="23_kndtj"]
 [ext_resource type="Texture2D" uid="uid://bxhyqgo5am306" path="res://assets/game-01/interactive/mobile/atlas/mobile_btn_5.tres" id="24_83u7d"]
+[ext_resource type="AudioStream" uid="uid://b2k3sh6lbsjrc" path="res://sounds/morse.wav" id="24_yaply"]
 [ext_resource type="Texture2D" uid="uid://b2011vfk25n0" path="res://assets/game-01/interactive/mobile/atlas/mobile_btn_6.tres" id="25_b5ahx"]
 [ext_resource type="Texture2D" uid="uid://bwsx82asf1h26" path="res://assets/game-01/interactive/mobile/atlas/mobile_btn_7.tres" id="26_r4u5m"]
 [ext_resource type="Texture2D" uid="uid://bus55ayveklxx" path="res://assets/game-01/interactive/mobile/atlas/mobile_btn_8.tres" id="27_d2r34"]
@@ -70,9 +71,9 @@ offset_bottom = 164.0
 [node name="LabelPIN" type="Label" parent="Pantallas/LockScreen"]
 z_index = 3
 layout_mode = 0
-offset_left = 17.0
+offset_left = 13.0
 offset_top = 42.0
-offset_right = 63.0
+offset_right = 67.0
 offset_bottom = 62.0
 
 [node name="MobileBtn0" type="TextureButton" parent="Pantallas/LockScreen"]
@@ -251,6 +252,7 @@ offset_right = 84.0
 offset_bottom = 162.0
 
 [node name="MusicPlayer" type="AudioStreamPlayer2D" parent="Pantallas/MusicApp"]
+stream = ExtResource("24_yaply")
 
 [node name="BtnPlayPause" type="TextureButton" parent="Pantallas/MusicApp"]
 layout_mode = 0
@@ -258,6 +260,7 @@ offset_left = 29.0
 offset_top = 70.0
 offset_right = 53.0
 offset_bottom = 94.0
+toggle_mode = true
 texture_normal = ExtResource("32_krr7y")
 texture_pressed = ExtResource("33_gusex")
 
@@ -337,8 +340,6 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_placeholder_color = Color(0.46229005, 0.46229094, 0.46229017, 0.6)
 theme_override_font_sizes/font_size = 8
 placeholder_text = "Whrite here"
-alignment = 1
-max_length = 4
 flat = true
 
 [node name="ResultadoLabel" type="Label" parent="Pantallas/HintApp"]

@@ -1,9 +1,6 @@
-[gd_scene load_steps=49 format=3 uid="uid://l8rglr0pslgo"]
+[gd_scene load_steps=46 format=3 uid="uid://l8rglr0pslgo"]
 
 [ext_resource type="Script" uid="uid://baisebwaxbs4j" path="res://scripts/player.gd" id="1_7omxl"]
-[ext_resource type="Texture2D" uid="uid://cdhxvxrjxoxu1" path="res://assets/lifes/health-bar.png" id="2_3c7ea"]
-[ext_resource type="Texture2D" uid="uid://dma77qehs8153" path="res://assets/lifes/life.tres" id="2_u4c7w"]
-[ext_resource type="Texture2D" uid="uid://c1sxfetwd1355" path="res://assets/lifes/nolife.tres" id="3_6sl1v"]
 [ext_resource type="Texture2D" uid="uid://g4jhwirt5e4c" path="res://assets/player/walk_down_animation.png" id="4_ne3il"]
 [ext_resource type="Texture2D" uid="uid://cag8xjo8ngl4m" path="res://assets/player/walk_up_animation.png" id="5_kai0q"]
 [ext_resource type="Texture2D" uid="uid://dfa7uuqd74qny" path="res://assets/player/walk_right_animation.png" id="6_wxvsy"]
@@ -12,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://7omfixo8neid" path="res://assets/player/idle_up_animation.png" id="9_t3r7j"]
 [ext_resource type="Texture2D" uid="uid://cdjottqwhksv5" path="res://assets/player/idle_right_animation.png" id="10_h6470"]
 [ext_resource type="Texture2D" uid="uid://seayb6gudnrs" path="res://assets/player/idle_left_animation.png" id="11_88mv1"]
+[ext_resource type="AudioStream" uid="uid://dofpv73xaeliu" path="res://sounds/pasos.mp3" id="12_udxxx"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_udxxx"]
 atlas = ExtResource("4_ne3il")
@@ -287,23 +285,16 @@ size = Vector2(16, 5)
 radius = 23.0
 height = 72.0
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_hsluc"]
-atlas = ExtResource("2_3c7ea")
-region = Rect2(32, 0, 32, 32)
-
 [node name="Player" type="CharacterBody2D" groups=["jugador"]]
 script = ExtResource("1_7omxl")
-textura_lleno = ExtResource("2_u4c7w")
-textura_vacio = ExtResource("3_6sl1v")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_vl8ci")
-animation = &"Izquierda"
-frame = 2
-frame_progress = 0.28635508
+animation = &"Arriba"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(0, -32)
+zoom = Vector2(2.5, 2.5)
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
 position = Vector2(-2, 29.5)
@@ -319,29 +310,8 @@ shape = SubResource("CapsuleShape2D_onrkg")
 [node name="PosicionAgarre" type="Marker2D" parent="."]
 position = Vector2(0, -32)
 
-[node name="Vidas" type="CanvasLayer" parent="."]
-
-[node name="ContenedorCorazones" type="HBoxContainer" parent="Vidas"]
-offset_left = 20.0
-offset_top = 20.0
-offset_right = 104.0
-offset_bottom = 60.0
-theme_override_constants/separation = -6
-
-[node name="TextureRect" type="TextureRect" parent="Vidas/ContenedorCorazones"]
-layout_mode = 2
-texture = SubResource("AtlasTexture_hsluc")
-stretch_mode = 5
-
-[node name="TextureRect2" type="TextureRect" parent="Vidas/ContenedorCorazones"]
-layout_mode = 2
-texture = SubResource("AtlasTexture_hsluc")
-stretch_mode = 5
-
-[node name="TextureRect3" type="TextureRect" parent="Vidas/ContenedorCorazones"]
-layout_mode = 2
-texture = SubResource("AtlasTexture_hsluc")
-stretch_mode = 5
+[node name="SonidoPasos" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("12_udxxx")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
