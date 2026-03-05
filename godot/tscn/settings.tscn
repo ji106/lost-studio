@@ -216,6 +216,7 @@ grow_vertical = 2
 [node name="BarraVolumenMaster" type="Control" parent="."]
 z_index = 1
 layout_mode = 1
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = 50.0
@@ -229,7 +230,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="ContenedorCuadros" type="HBoxContainer" parent="BarraVolumenMaster"]
 layout_mode = 1
-offset_right = 200.0
+offset_right = 198.0
 offset_bottom = 22.0
 theme_override_constants/separation = 2
 
@@ -281,6 +282,7 @@ offset_bottom = 22.0
 [node name="BarraVolumenMusic" type="Control" parent="."]
 z_index = 1
 layout_mode = 1
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -130.0

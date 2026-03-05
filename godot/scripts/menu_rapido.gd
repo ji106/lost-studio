@@ -58,7 +58,7 @@ func _on_boton_menu_guarda_pressed():
 	var player = get_tree().get_first_node_in_group("jugador")
 	
 	if player != null:
-		# 1. Guardamos datos del jugador [cite: 2025-11-28]
+		# 1. Guardamos datos del jugador
 		Global.game_data["player_position"] = player.global_position
 		
 		# Eliminamos la referencia a "vidas" si ya las quitaste del Global
@@ -81,4 +81,4 @@ func _on_boton_menu_guarda_pressed():
 		else:
 			get_tree().change_scene_to_file("res://tscn/menu.tscn")
 	else:
-		print("❌ ERROR: Jugador no encontrado. Revisa el grupo 'jugador' [cite: 2025-11-28]")
+		print("❌ ERROR: Jugador no encontrado.")

@@ -1,7 +1,7 @@
 extends Control
 
 # --- SEÑALES ---
-signal simon_completado # Se activa al terminar la fase de Simón Dice
+signal simon_completado 
 
 # --- CONFIGURACIÓN ---
 var codigo_secreto_normal : String = "20055" 
@@ -29,7 +29,15 @@ func _ready():
 	luz_roja.visible = false
 	for key in botones: 
 		botones[key].modulate = Color.WHITE
-	actualizar_pantalla()
+	
+	# --- CARGAR ESTADO GUARDADO ---
+	if Global.game_data["keypad_completado"] == true:
+		pantalla.text = "OPEN"
+		pantalla.modulate = Color.GREEN
+		luz_verde.visible = true
+		input_bloqueado = true 
+	else:
+		actualizar_pantalla()
 
 # --- FUNCIONES PÚBLICAS ---
 func iniciar_simon_dice():
@@ -108,10 +116,14 @@ func exito_simon():
 	luz_verde.visible = true
 	input_bloqueado = true
 	
+	# --- GUARDAR ESTADO ---
+	Global.game_data["keypad_completado"] = true
+	Global.guardar_partida()
+	
 	emit_signal("simon_completado") 
 	
 	await get_tree().create_timer(2.0).timeout
-	luz_verde.visible = false
+	# luz_verde.visible = false
 	modo_simon_activo = false 
 
 func exito_normal():
@@ -128,11 +140,19 @@ func error_generico():
 	pantalla.modulate = Color.RED
 	luz_roja.visible = true
 	input_bloqueado = true 
+	
 	await get_tree().create_timer(1.0).timeout
+	
 	luz_roja.visible = false
 	pantalla.modulate = Color.WHITE
-	input_bloqueado = false 
 	borrar_todo() 
+	
+	# --- MODIFICACIÓN: REPETIR SECUENCIA SI ES SIMÓN ---
+	if modo_simon_activo:
+		print("Fallaste. Repitiendo secuencia...")
+		reproducir_animacion_luces() # <--- Se vuelve a mostrar la misma secuencia
+	else:
+		input_bloqueado = false 
 
 func actualizar_pantalla():
 	pantalla.text = codigo_actual

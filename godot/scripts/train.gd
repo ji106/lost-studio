@@ -12,7 +12,7 @@ func _ready():
 		.set_ease(Tween.EASE_OUT)
 
 func _process(_delta):
-	# Si el jugador está cerca Y pulsa la tecla de interacción [cite: 2025-11-28]
+	# Si el jugador está cerca Y pulsa la tecla de interacción
 	if jugador_cerca and Input.is_action_just_pressed("interactuar"):
 		print("Subiendo al tren... Iniciando transición!")
 		
@@ -25,7 +25,7 @@ func _process(_delta):
 
 # --- SEÑALES DEL AREA2D ---
 func _on_zona_interaccion_body_entered(body):
-	# Verificamos si es el jugador por nombre o grupo [cite: 2025-11-28]
+	# Verificamos si es el jugador por nombre o grupo
 	if body.name == "Player" or body.is_in_group("jugador"):
 		jugador_cerca = true
 

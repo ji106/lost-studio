@@ -54,7 +54,7 @@ func programar_comentario_entrada():
 	if caja_dialogo:
 		var p = get_tree().get_first_node_in_group("jugador")
 		
-		# Congelamos al personaje para que no pueda caminar mientras piensa [cite: 2025-11-28]
+		# Congelamos al personaje para que no pueda caminar mientras piensa
 		if p: p.set_congelado(true)
 		
 		caja_dialogo.iniciar_dialogo(pensamientos_estacion)
@@ -68,7 +68,7 @@ func programar_comentario_entrada():
 # --- LÓGICA DE ESCALERAS (TU CÓDIGO ORIGINAL) ---
 
 func _on_entrada_subida_body_entered(body):
-	# Detección mejorada usando grupos para mayor seguridad [cite: 2025-11-28]
+	# Detección mejorada usando grupos para mayor seguridad
 	if body.name == "Player" or body.is_in_group("jugador"):
 		print("Subiendo escalera...")
 		body.usar_escalera(destino_subida.global_position, 2, "Izquierda")
