@@ -57,7 +57,7 @@ func iniciar_secuencia_ascensor():
 	await anim.animation_finished
 
 	# 7. Cambiamos a la siguiente escena, usando pantalla de transición si está disponible
-	print("Viajando al nivel 3...")
+	print("Viajando al nivel 2...")
 	if has_node("/root/TransitionScreen"):
 		get_node("/root/TransitionScreen").cambiar_escena(next_scene_path)
 	else:
