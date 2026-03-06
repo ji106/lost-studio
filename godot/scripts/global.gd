@@ -1,6 +1,5 @@
 extends Node
 
-# --- VARIABLES DE ESTADO ---
 var current_slot : int = 1 			# Slot actual de guardado/carga
 var cargando_partida : bool = false # Indica si se está cargando una partida
 var modo_menu : String = "LOAD" 	# Modo del menú, puede ser "LOAD" o "SAVE"
