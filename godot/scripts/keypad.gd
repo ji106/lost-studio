@@ -164,7 +164,7 @@ func error_generico():
 	# Si estamos en modo Simón, repetimos la secuencia para el jugador
 	if modo_simon_activo:
 		print("Fallaste. Repitiendo secuencia...")
-		reproducir_animacion_luces() # <--- Se vuelve a mostrar la misma secuencia
+		reproducir_animacion_luces()
 	else:
 		input_bloqueado = false 
 
