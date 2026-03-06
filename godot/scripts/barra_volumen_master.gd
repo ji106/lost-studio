@@ -8,8 +8,8 @@ signal volumen_cambiado(nuevo_valor)
 # Contenedor que agrupa los cuadros visuales del volumen
 @onready var contenedor_cuadros = $ContenedorCuadros
 
-var cuadraditos : Array = [] # Lista para guardar los cuadros que representan niveles de volumen
-var valor_actual : float = 1.0 # Volumen actual, 1.0 = 100%
+var cuadraditos : Array = [] 	# Lista para guardar los cuadros que representan niveles de volumen
+var valor_actual : float = 1.0 	# Volumen actual, 1.0 = 100%
 
 func _ready():
 	# Recorremos los hijos del contenedor y guardamos los que son TextureRect (los cuadros)
@@ -28,9 +28,9 @@ func actualizar_visuales(valor_0_a_1 : float):
 	
 	for i in range(total_cuadros):
 		if i < cuadros_a_encender:
-			cuadraditos[i].visible = true # Encendemos el cuadro
+			cuadraditos[i].visible = true 	# Encendemos el cuadro
 		else:
-			cuadraditos[i].visible = false # Apagamos el cuadro
+			cuadraditos[i].visible = false 	# Apagamos el cuadro
 
 # Detecta clics y arrastres para cambiar el volumen
 func _on_detector_gui_input(event):
@@ -39,8 +39,8 @@ func _on_detector_gui_input(event):
 	var arrastrando = event is InputEventMouseMotion and Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT)
 	
 	if click_izquierdo or arrastrando:
-		var ancho_total = detector_clics.size.x  # Ancho del área clicable
-		var click_x = event.position.x # Posición horizontal del clic o arrastre
+		var ancho_total = detector_clics.size.x  	# Ancho del área clicable
+		var click_x = event.position.x 				# Posición horizontal del clic o arrastre
 		
 		if ancho_total > 0:
 			# Calculamos el nuevo valor de volumen proporcional a la posición del ratón
@@ -52,10 +52,10 @@ func _on_detector_gui_input(event):
 			# Solo actualizamos si el valor cambió para evitar emisiones innecesarias
 			if valor_actual != nuevo_valor:
 				valor_actual = nuevo_valor
-				actualizar_visuales(valor_actual) # Actualizamos la visualización
-				emit_signal("volumen_cambiado", valor_actual) # Avisamos a otros nodos
+				actualizar_visuales(valor_actual) 				# Actualizamos la visualización
+				emit_signal("volumen_cambiado", valor_actual) 	# Avisamos a otros nodos
 
 # Permite establecer el valor del volumen desde fuera (por ejemplo, al cargar configuración)
 func set_valor(valor_0_a_1):
 	valor_actual = clamp(valor_0_a_1, 0.0, 1.0) # Limitamos el valor
-	actualizar_visuales(valor_actual) # Actualizamos visualmente
+	actualizar_visuales(valor_actual) 			# Actualizamos visualmente
