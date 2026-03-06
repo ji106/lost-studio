@@ -1,21 +1,21 @@
 extends CanvasLayer
 
-@onready var fondo = $FondoNegro
-@onready var texto = $TextoContinuara
+@onready var fondo = $FondoNegro 		# Fondo negro para el efecto de transición
+@onready var texto = $TextoContinuara 	# Texto que muestra "Continuará" o mensaje final
 
 func _ready():
-	# 1. Empezamos invisibles para el efecto
+	# 1. Empezamos con el fondo y texto invisibles (transparencia total)
 	fondo.modulate.a = 0
 	texto.modulate.a = 0
 	
-	# 2. Hacemos que aparezca suavemente (Fade In)
+	# 2. Creamos una animación para que el fondo y el texto aparezcan suavemente (fade in)
 	var tween = create_tween()
-	# Aparece el fondo negro en 1.5 segundos
+	# El fondo negro aparece en 1.5 segundos
 	tween.tween_property(fondo, "modulate:a", 1.0, 1.5)
-	# Aparece el texto en 1.5 segundos después del fondo
+	# El texto aparece en 2 segundos, empezando al mismo tiempo que el fondo (en paralelo)
 	tween.parallel().tween_property(texto, "modulate:a", 1.0, 2.0)
 	
-	# 3. Esperamos los 5 segundos que me has pedido
+	# 3. Esperamos 5 segundos mostrando el mensaje antes de cerrar
 	print("El juego ha terminado. Gracias por jugar.")
 	await get_tree().create_timer(5.0).timeout
 	
