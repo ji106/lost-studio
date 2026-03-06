@@ -6,20 +6,22 @@ extends Node
 func _ready():
 	# Añadimos el reproductor de audio como hijo del nodo actual para que funcione en la escena
 	add_child(player)
-	# Indicamos que el audio se envíe al canal o bus llamado "Music" (para controlar volumen o efectos juntos)
+
+	# Asignamos el reproductor al bus de audio llamado "Music" para controlar volumen y efectos
 	player.bus = "Music"
+
 func play_music(nombre_archivo: String):
-	# Cargamos el archivo de sonido desde la carpeta "sounds" usando el nombre que nos pasan
+	# Cargamos el archivo de sonido desde la carpeta "sounds" usando el nombre recibido
 	var stream = load("res://sounds/" + nombre_archivo)
 	
-	# Comprobamos si el sonido que queremos reproducir ya está sonando
+	# Comprobamos si el sonido que queremos reproducir ya está sonando para evitar reiniciarlo
 	if player.stream == stream and player.playing:
-		# Si es así, no hacemos nada para que no se reinicie la canción
-		return
+		return # Si ya suena, no hacemos nada
 
 	# Asignamos el audio cargado al reproductor
 	player.stream = stream
-	# Empezamos a reproducir el audio
+
+	# Iniciamos la reproducción del audio
 	player.play()
 
 func stop_music():
