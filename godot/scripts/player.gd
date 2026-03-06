@@ -1,18 +1,20 @@
 extends CharacterBody2D
 
-# --- VARIABLES DE MOVIMIENTO ---
+# Velocidad de movimiento del jugador
 @export var speed: float = 100.0
+# Referencia al sprite animado para cambiar animaciones según movimiento
 @onready var animated_sprite_2d = $AnimatedSprite2D
 
-# --- VARIABLES DE ESPERA (IDLE) ---
+# Tiempo que el jugador lleva quieto, para activar animación de espera
 var tiempo_quieto : float = 0.0
+# Última dirección en la que se movió el jugador, usada para animación de espera
 var ultima_direccion : String = "Abajo" 
 
-# --- VARIABLES DE INTERACCIÓN ---
+# Variable que indica si el jugador está cerca del tren para poder interactuar
 var cerca_del_tren : bool = false
 
-# --- INICIALIZACIÓN ---
 func _ready():
+	# Si estamos cargando desde una partida guardada, teletransportamos al jugador a la posición guardada
 	if Global.cargando_partida == true:
 		print("🚀 Teletransportando jugador a posición guardada...")
 		if "player_position" in Global.game_data:
@@ -22,6 +24,7 @@ func _ready():
 func _physics_process(delta: float) -> void:
 	var direction = Vector2.ZERO
 
+	# Detectamos la dirección según las teclas pulsadas
 	if Input.is_action_pressed("right"):
 		direction.x += 1
 	if Input.is_action_pressed("left"):
@@ -31,32 +34,35 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_pressed("up"):
 		direction.y -= 1
 
+	# Si hay alguna dirección, normalizamos para evitar velocidad diagonal mayor
 	if direction.length() > 0:
 		direction = direction.normalized()
-		velocity = direction * speed
-		tiempo_quieto = 0.0
-		update_animation(direction)
+		velocity = direction * speed 	# Aplicamos velocidad
+		tiempo_quieto = 0.0 			# Reiniciamos tiempo quieto
+		update_animation(direction) 	# Actualizamos animación según dirección
 		
-		# Forzamos que, si se mueve, no tenga animación de Stop
+		# Si la animación actual es de parada, no hacemos nada para evitar conflictos
 		if not animated_sprite_2d.is_playing() or animated_sprite_2d.animation.begins_with("Stop"):
 			pass 
 	else:
+		# Si no se mueve, velocidad cero y contamos tiempo quieto
 		velocity = Vector2.ZERO
 		tiempo_quieto += delta
-		
+
+		# Si lleva más de 5 segundos quieto, mostramos animación de espera según última dirección
 		if tiempo_quieto >= 5.0:
 			var animacion_stop = "Stop" + ultima_direccion
 			if animated_sprite_2d.sprite_frames.has_animation(animacion_stop):
 				if animated_sprite_2d.animation != animacion_stop:
 					animated_sprite_2d.play(animacion_stop)
 		else:
+			# Mientras no llegue a 5 segundos, paramos animación si no es de espera
 			if not animated_sprite_2d.animation.begins_with("Stop"):
 				animated_sprite_2d.stop()
 	
-	move_and_slide()
+	move_and_slide() # Movemos el personaje con la velocidad calculada
 	
-	# --- CORRECCIÓN SONIDO DE PASOS ---
-	# Quitamos 'is_on_floor()' porque en vista Top-Down suele fallar al no haber gravedad
+	# Reproducimos sonido de pasos solo si el jugador se mueve
 	if velocity.length() > 0:
 		# Verificamos que el nodo existe para evitar errores si lo borras
 		if has_node("SonidoPasos"):
@@ -66,8 +72,9 @@ func _physics_process(delta: float) -> void:
 		if has_node("SonidoPasos"):
 			$SonidoPasos.stop()
 	
-	# --- LÓGICA DE INTERACTUAR ---
+	# Detectamos si el jugador pulsa la tecla de interacción
 	if Input.is_action_just_pressed("interactuar"):
+		# Si está cerca del tren, iniciamos transición para subir
 		if cerca_del_tren:
 			print("Subiendo al tren... ¡Iniciando transición!")
 			if has_node("/root/TransitionScreen"):
@@ -75,6 +82,7 @@ func _physics_process(delta: float) -> void:
 			else:
 				get_tree().change_scene_to_file("res://tscn/exit.tscn")
 
+# Actualiza la animación según la dirección de movimiento
 func update_animation(direction: Vector2) -> void:
 	var animation_name: String = animated_sprite_2d.animation
 
@@ -94,25 +102,27 @@ func update_animation(direction: Vector2) -> void:
 		animation_name = "Arriba"
 		ultima_direccion = "Arriba"
 		animated_sprite_2d.offset = Vector2(0, 0) 
-	
+
+	# Cambiamos la animación solo si es distinta a la actual
 	if animated_sprite_2d.animation != animation_name:
 		animated_sprite_2d.play(animation_name)
 	elif not animated_sprite_2d.is_playing():
 		animated_sprite_2d.play(animation_name)
 
-# --- FUNCIONES EXTRA ---
+# Función para usar una escalera: mueve al jugador suavemente a destino con animación parada
 func usar_escalera(destino: Vector2, tiempo: float, animacion_parado: String):
-	set_physics_process(false)
+	set_physics_process(false) 										# Desactivamos el movimiento manual
 	velocity = Vector2.ZERO
-	animated_sprite_2d.play(animacion_parado)
-	animated_sprite_2d.stop() 
+	animated_sprite_2d.play(animacion_parado) 						# Animación de parada
+	animated_sprite_2d.stop() 										# Se asegura que la animación no se repita
 	var tween = create_tween()
-	tween.tween_property(self, "global_position", destino, tiempo)
-	tween.tween_callback(terminar_escalera)
+	tween.tween_property(self, "global_position", destino, tiempo) 	# Animamos movimiento
+	tween.tween_callback(terminar_escalera)							# Al terminar, reactivamos el movimiento
 
 func terminar_escalera():
-	set_physics_process(true)
+	set_physics_process(true) # Reactivamos el movimiento manual
 
+# Congela o descongela al jugador (por ejemplo, durante diálogos o pausas)
 func set_congelado(estoy_congelado: bool):
 	set_physics_process(!estoy_congelado)
 	if estoy_congelado:
